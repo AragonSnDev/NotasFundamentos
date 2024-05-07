@@ -1,0 +1,9 @@
+las computadoras se comunican con codigo binario, una representacion numerica de 0 y 1 y utilizamos un lenguaje de programacion como una interface de comunicacion entre el el codigo binario y nuestro lenguaje, a la comunicacione entre maquina y humano se le conoce como programacion.
+
+lenguaje de bajo nivel: estos lenguajes son lo mas aproximado al lenguaje maquina binario como el lenguaje ensamblador.
+
+lenguaje de alto nivel: son lenguajes que se aproximan mas al lenguaje humano como python y javascript.
+
+interprete: es un componente que se encarga de traducir las lineas de codigo del lenguaje de programacion a lenguaje maquina de linea por linea.
+
+compilador: es un componente que se encarga de tomar todo el archivo y lo convierte en un solo archivo en codigo binario.

@@ -1,0 +1,48 @@
+loops: nos permiten repetir código
+
+tipos de loops
+
+for:repite  si cumple una condición interna que especificamos (no se ejecuta si la condición nunca se cumple), tiene un contador interno
+while: repite  si cumple una condición externa que especificamos (no se ejecuta si la condición nunca se cumple), la condición puede ser cualquiera.
+do/while: se ejecuta una vez y luego verifica si una condición externa se cumple y si es el caso se repite , la condición puede ser cualquiera.
+
+
+loop for of: es un tipo de loop que iterara sobre estructura de datos "iterables" como arrays, maps o sets e incluso cadenas de texto.
+
+itera sobre el valor de cada elemento en la iteracion pero no proporciona acceso a las claves o indices solo a los valores.
+
+ej.
+const colors = ['red', 'green', 'blue'];
+
+for (const color of colors) {
+    console.log(color);
+}
+
+en este ejemlo "color" o sea la variable que se itera toma los siguientes valores 
+
+red
+green
+blue
+
+
+loop for in: es un ipo de loop que itera sobre las propiedades de un objeto, la variable toma el tombre de cada propiedad en cada iteracion,
+puede iterar sobre las popiedades enumerables, incluidad laspropiedades heredadas del prototipo del objeto, no se garantiza un orden de iteracion por lo que no es util iteral sobre aryas u objetos donde el orden SI importe.
+
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+for (const key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+
+en este ejemplo "key" representara el nombre de la propiedad  por lo que se imprimira lo siguiente 
+
+name: John
+age: 30
+city: New York
+
+recuerda que cuando hacemos objeto[key] si "key" tiene como valor el nombre de la propiedad, accedes a la propiedad en si, es una forma de iteral sobre objetos de forma dinamica.
+

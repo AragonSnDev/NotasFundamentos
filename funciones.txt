@@ -1,0 +1,41 @@
+funciones: son los bloques fundamentales del código javascript, son básicamente un bloque de código que se puede reutilizar, estas funciones pueden ser ejecutadas, llamadas o invocadas (es lo mismo).
+
+las funciones pueden recibir (parámetros) y regresar datos.
+
+formas de escribir funciones.
+
+declaración:
+ej.
+    function calcAge1(birthYeah){
+        //código;
+    }
+
+expresión:
+ej.
+    const calcAge2 = function(birthYeah){ //esto es una función expresión ya que genera un valor y este se asigna en calcAge2
+        //código
+    }
+
+diferencias
+una función declarada puede llamarse antes de ser declarada
+calcAge1(1994); //No genera error
+function calcAge1(birthYeah){
+        //código;
+    }
+
+calcAge2(1994); //genera error
+const calcAge2 = function(birthYeah){ 
+        //código
+    }
+
+cuando usar cual? es a criterio del programador pero en algún punto necesitaras alguna de los dos asi que hay que tomarlo encenta.
+
+
+funciones flecha (arrow): es una sintaxis mas fácil para declarar funciones expresión
+ejecución
+
+const calcAge3 = birthYeah => 2037 - birthYeah;
+
+estas se diferencian en que tienen un return implícito cuando esta funcione tiene una sola linea por lo que no es necesario escribir la palabra clave return, ademas en caso de tener una sola linea de código no necesitas escribir las llaves como en el otro tipo de funciones o paréntesis en caso de tier un solo parámetro.
+
+las funciones pueden llamar a otras funciones.

@@ -1,0 +1,44 @@
+Normalinzacion de tablas
+
+Normalizacion: es la optimizacion de las bases de datos en base de reglas (normalizaciones).
+
+Primera forma normal (1NF): Nos dice que cada columna debe tener una solo un valor sin repetir grupos.
+    1.Cada celda de la tabla debe contener un solo valor, no un conjunto de valores o una lista separada por comas.
+    2.Cada columna de la tabla debe tener un nombre único.
+    3.El orden en que se almacenan los datos no debe tener importancia, es decir, los datos deben ser identificables por la clave principal, no por su posición en la tabla.
+
+Segunda forma normal (2NF): Nos dice las relaciones entre tablas se deben hacer entre una llave primaria (PK) y multiples llaves foraneas (FK).
+    1. Cumplir con la 1NF, lo que significa que la tabla ya debe tener celdas con valores únicos, nombres de columna únicos y que los datos no dependan del orden de almacenamiento.
+    2.Asegurarse de que todos los atributos no clave (columnas que no son parte de la clave principal) dependan completamente de la clave principal. En otras palabras, 
+    cada columna en la tabla debe estar relacionada directamente con la clave principal y no depender de ninguna subclave.
+
+Tercera forma normal (3NF): Nos dice que tenemos que lo que no forma parte de la llave primaria nos dice como se debe realizar la relacion
+    1.Cumplir con la 2NF, lo que significa que la tabla ya debe tener celdas con valores únicos, nombres de columna únicos, y que los atributos no clave dependan completamente de la clave principal.
+    2.Eliminar cualquier dependencia transitiva, lo que implica que las columnas que no son parte de la clave principal no deben depender de otras columnas que no sean la clave principal.
+
+Diagramas de entidad-relacion (ER): son diagramas o gracias que nos ayudan a entender como estan relacionadas las tablas dentro de una base de datos.
+
+PK (llave primaria): es el indicador de que el campo que contenga esta nomenclarura es la llave primaria de la tabla, se le llama llave primaria a al campo que contenda el identificador de la tabla para que otras tablas se puedan
+relacionar con ellas.
+
+FK (llave foranea): es el indicador que contendra el campo que indique con que PK de otra tabla.
+
+Cardinalidad: la cardinalidad se refiere al numero maximo de veces que una instancia se relaciona con otra.
+
+simbologia de cardinalidad
+https://informaticosinlimites.com/wp-content/uploads/2022/06/24.svg
+
+----|- una
+----<- muchos
+---||- una(y solo una)
+---o|- cero o una.
+---|<- una a muchas
+---o<- cero o muchas.
+
+JOINS
+
+Los joins son una clausula de sql que nos permite hacer consulta entre una o mas tablas, existen varias tipos de joins 
+https://i.stack.imgur.com/rOeAz.jpg
+
+Tabla pivote:Una tabla pivote es una herramienta de análisis que permite resumir y reorganizar datos de una tabla para facilitar su comprensión y análisis. Se utilizan operaciones como la agrupación, suma, promedio, conteo, entre otras, para crear una nueva tabla que muestra los datos de manera más compacta y estructurada. 
+La tabla pivote es útil para resumir grandes conjuntos de datos y obtener información clave rápidamente.

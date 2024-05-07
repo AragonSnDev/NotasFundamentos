@@ -1,0 +1,23 @@
+TIPOS DE DATOS EN JS
+1. number: decimales y enteros.
+2. strings: texto y se marcan con "" o '';
+3. booleans: tipos logicos para tomar deciciones (true o false);
+4. undefined: un valor vacio (para variables que no existen o no estan inicializadas).
+5. null: un valor vacio (para variables que ya definidas).
+6. symbol: (deprecado) es para un valor unico qe no puede ser modificado.
+7. bigint: para numeros demasiado grandes.
+
+tipado dinamico: quiere decir que no tienes que definir manualmente el tipo de variable cuando se le almacena un valor, esto se hace automaticamente y es el valor el que tiene tipo y no la variable gracias a esto podemos reasignar el tipo de dato almacenado en una variable.
+
+typeof: es un operador que nos devuelve el tipo de valor que tiene la variable. tiene un error cuando se utiliza type of en un valor null, este devolvera objecto pero no es un objeto.
+
+Declarar variables:
+let: se utiliaz para declarar valores que van a cambiar en tiempo de ejecucion a esto se le llama mutacion o reasignacion de variables.
+const: se utiliza para valores que no deben de mutar en tiempo de ejecucion (es inmutable) y necesitan declararse con un valor si no causa error.
+
+let vs const: la buena practica es siempre usar const a menos de que estemos seguros de que ese valor necesite cambiar durante el tiempo de ejecucion.
+
+var:es la forma antigua de declarar variables en js, funciona muy parecido a let, nunca se usa var.
+
+tambien se puede inicializar una variable sin las palabras let, const o var, pero esto declara la variable dentro del objecto global.
+

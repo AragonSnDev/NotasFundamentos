@@ -1,0 +1,156 @@
+Los objectos son una estructura de datos similar a los array con la principal diferencia de que en estos podemos declarar un nombre a los valores(en este caso se les dice propiedades) y para acceder a una propiedad se realizar con la siguiente sintaxis
+
+objeto.propiedad;
+objeto["propiedad"]; //puedes agregar una expresión dentro de la propiedad
+
+los objetos pueden tener funciones y expresiones como propiedades
+
+si se trata de obtener una propiedad que no existe, esta regresara undefined.
+
+Destructuracion de objetos es muy similiar a la destrucutracion de arrays pero con el cambio de  [] a {}
+
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+    openingHours: {
+        thu: {
+            open: 12,
+            close: 22,
+        },
+        fri: {
+            open: 11,
+            close: 23,
+        },
+        sat: {
+            open: 0, // Open 24 hours
+            close: 24,
+        },
+    },
+};
+
+si se quisiera obtener los datos como name o location seria.
+
+const {name , location} = restaurant;
+
+name tendria valor 'Classico Italiano'..
+location tendria valor de  'Via Angelo Tavanti 23, Firenze, Italy'
+
+de igualmanera que los arreglos podemos poner un valor por defecto a nuestros valores destructurasos.
+
+const {starterMenu = [] , mainMenu = [],openingHours = {}} = restaurant;
+
+
+tambien podemos reasignar variables ya declaradas con propiedades de un objeto de la siguiente forma
+
+let a = 1;
+let b = 2;
+const obj = {a:23, b:27;c:24};
+
+reasigancion mediante destrucutracion
+({a,b} = obj);
+
+al igual que los areglos pordemos destrucurar objetos anidados de la siguiente forma
+
+
+
+const {
+    fri:{open, close}
+} = openingHours; //ya destrucutado en un ejemplo anterior.
+
+aqui open y close ya serian variables destructuradas con los valores
+open = 12 y close = 12
+
+tambien podesmos hacer destructurin a los argumentos de una funciones
+
+orderDelivery: funciont({starterIndex,mainIndex,time,address}){
+
+}
+
+orderDelivery({
+    time:'22:30',
+    address: 'via del sole, 21',
+    mainIndex:2,
+    starterIndex:2
+})
+
+como nota para lograr esto las propiedades del objeto deben ser iguales al nombre de los argumentos o parametros.
+
+
+mejoras a la sintaxis de objetos literales 
+
+si tenemos objeto y le queremos agregar propieadades a parir de otros valores u objetos normalmente se haria de la siguietne forma
+
+const valor = "valor a asignar";
+
+const obj = {
+    valor:valor
+}
+
+en es6 se puede asigar ahora una propiedad a un objeto de la siguiente forma
+
+const obj = {
+    valor
+}
+
+para lograr esto la variable u objeto debe llamarse de la misma manera que la propiedad que necesitamos asignar.
+
+tambiem podemos definir funciones sin necesidad de crear una funcion expresiones
+
+const obj = {
+    metodo: funcion (){
+
+    }
+}
+
+seria de la siguiente manera.
+
+const obj = {
+    metodo(){
+
+    }
+}
+
+tambien podemos declarar los nombres de un arreglo de manera programatica poniendo expresiones dentro de [] en lugar del nombre de la propiedad directamente.
+
+opcional chaining: es una forma de preguntar por una o varias propiedades y en caso de no existir la expresion devuelve indedinido
+
+ej. tenemos el objeto siguiente 
+
+const restaurant = {
+    menu:{
+        platillo1:{
+            nombre:"platill 1",
+            descripcion : "descripcion platillo 1",
+            precio: "100.00"
+        }
+    }
+}
+
+y queremos preguntar por el precio del platillo 1 lo hariamos de la siguiente forma
+
+if(restaurant.menu.platillo1.precio){
+    //bloque de codigo
+}
+
+pero que pasa si preguntamos por un platillo que no existe
+
+if(restaurant.menu.platillo2.precio){
+    //bloque de codigo
+}
+
+esto causaria un error, ya  que estamos preguntando por una propiedad de undefined.
+
+una fomra de realizar este tipo de condiciones y evitar el error seria con el operador ?. antes de cada propiedad del objeto
+
+if(restaurant.menu.platillo1?.precio){
+    //bloque de codigo
+}
+
+de esta forma se pregunta por cada valor que tenga cada propiedad y en caso de no exisitr una propiedad u objeto devuelve false evitado que la aplicacion mande error.
+
+para pregiuntar por una propiedad de forma dinamica se hace con [] como si fuera un arreglo
+

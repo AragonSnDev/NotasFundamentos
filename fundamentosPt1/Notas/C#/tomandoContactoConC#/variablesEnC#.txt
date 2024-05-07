@@ -1,0 +1,10 @@
+una computadora contiene una memoria ram, donde se almacenan las variables de tus programas en C#, lo que quiere decir que estas variables solo existen durante la ejecucion del programa.
+
+las variables son realmente espacio en memoria que contienen un valor,
+cuando estas variables se declaran este espacio se almacena en la ram, este espacio contiene un valor cuando se le asigna dicho valor en tiempo de ejecucion.
+
+no se recomienda declarar variables que no se van a utilizar ya que se desperdicia memoria, los ide marcan un warning cuando se presenta este caso.
+
+tipo implicito: quiere decir que cuando una variable va ser del tipo del valor que se le esta asignando en la inicializacion y esto se hace con la palabra clave var.
+
+

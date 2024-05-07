@@ -1,0 +1,58 @@
+tipos de datos se subdividen en value type y reference type
+
+value type: (por valor) se refiere a las variables y datos se guardan en memoria ram y en tiempo de ejecucion se busca el espacio exacto perteneciente a ese valor
+
+reference type: (por referencia) son variables o datos que apuntan a la misma direccion o espacio en memoria a otro dato referenciado, esto quiere decir que las operaciones de una variable o dato como esta pueden afectar a otras que apunten donde mismo.
+
+subcategorias de tipos: los tipos de datos de valor y referencia pueden dividirse en subcategorias
+
+build in type: son los tipos de datos por defecto de C# y netcore.
+user define type: son tipos de valor que puede crear el usuario 
+
+build in types por valor:
+1- int.
+2- long.
+3- float.
+4- double.
+6- byte.
+7- decimal.
+8- short.
+9- char.
+10- bool.
+
+user defined type por valor: se crean segun las necesidades del usuasio basandose en dos estructuras llamadas enum y struct.
+
+build in types po referencia:
+1- object.
+2- strict.
+3- dynamic.
+
+user defined type: se pueden crear estrucutras personalizadas como clases, interfaces, arreglos y delegates.
+
+buenas practicas y reglas de declaracion e inicializacion de variables
+1. nombres de variables en camelCase.
+2. no usar caracteres especiales como $ y _.
+3. en caso de tipo float necesita terminar con f, ej 403.23f.
+
+float vs double vs decimal
+
+float siempre terminan con f.
+double nunca llega f o alguna otra letra al final.
+la normal es usar doubla en la mayoria de los casos.
+decimal se utiliza en variables que se utilizen en trasaciones financieras o cualquier caso de moneda y siempre terminan con m.
+
+
+byte vs int vs long
+
+byte es el que menos espacio requiere, se utiliza para enteros muy con valor numerico maximno de 256 o -256 ej. los dias de la semana;
+
+int es el tipo entero mas comun abarcando desde  -2,147,483,648 a 2,147,483,647 por lo que abarca mucho mas espacio que byte, pero mucho menos que long
+
+long es el tipo de enteros mas pesado llegado desde –9,223,372,036,854,775,808 hasta 9,223,372,036,854,775,807
+
+bool: solo puede tener dos valores, true o false.
+
+string: es para almacenar una cadena de caracteres (este es tipo de dato por referecia).
+
+char: es para almacenar un solo caracter
+

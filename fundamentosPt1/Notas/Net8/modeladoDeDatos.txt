@@ -1,0 +1,15 @@
+clase entitdad: es una clase objeto de C# que define las propieades con las que contara la tabla en base de datos, esta clase se utiliza para mappear y crear esta tabla mediante el uso de entity framework.
+
+atibutos en C#: son practicamente clases que se heredan de una clase base "Attribute", cualquier clase que se herede puede usarse como una especie de etiqueta en otros fragmentos de codigo.
+
+[Route("api/[controller]")] //indica el nombre de la ruta del servicio la cual seria en este caso api/SuperHeroes
+[ApiController] 
+public class SuperHeroesController : ControllerBase
+{
+
+}
+
+en este caso la clase  SuperHeroesController cuenta con los atributos 
+[Route("api/[controller]")] y [ApiController], los cuales se utilizan para especificar la ruta de acceso de una accion en un controlador de la api y habilitar comportamientos espeficificos relacionas con la convencion de la api respectivamente.
+
+DataContext: Es una clase que hereda de DbContext (libreria incluida en el entity framework), 

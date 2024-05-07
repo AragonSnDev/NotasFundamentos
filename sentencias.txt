@@ -1,0 +1,3 @@
+estrucutras de control: son sentencias que nos permiten crear diferentes flujos de codigo que se seguiran segun si se cumple o no una condicion.
+
+if/else: nos permite comparar valores y crear condiciones para realizar diferentes bloques de codigo si se cumple (if) o no (else) la condicion.

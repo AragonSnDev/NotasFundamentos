@@ -1,0 +1,15 @@
+Console.WriteLine("mensaje): muestra un mensaje por consola.
+Console.ReadLine(): lee el valor de entrada proveniente a la consola.
+ 
+clase.Parte(variable): convierte la variable en el tipo de dato correspondiente a la clase (int, float, double, string, etc).
+
+warning "variable" puede ser null: que estas mandando como parametro una variable que puede ser null, lo que puede causar problemas en tiempo de ejecucion para quitar este warning se agrega el caracter "!" cuando se manda a llamar el metodo.
+
+operadores matematicos:
++ , - , * , /
+
+operadoresa de asignacion:
+=, +=, -=, *=, /=
+
+operadores condicionales:
+==, !, !=, !==, ===, && , || , is (para comparar compatibilidad de tipo de datos),

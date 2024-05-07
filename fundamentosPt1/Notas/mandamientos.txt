@@ -1,0 +1,2 @@
+1. primero hacer codigo que funcione y siempre despues 
+optimizar/refactorizar para que sea mas rapido y legible

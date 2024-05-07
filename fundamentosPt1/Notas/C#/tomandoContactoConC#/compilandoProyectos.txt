@@ -1,0 +1,10 @@
+carpetas Bin y Obj
+
+cuando se compila el codigo se ejectura un proceso interno que genera un archivo unico (dll o exe).
+
+no importa si es un archivo o cien todos ellos se van a compilar y se agregaran al archivo dll o exe, estos archivos compilados se almacenan en la carpeta obj mientras que el archivo unico dll se almacena en la carpeta bin.
+
+en caso de errores la herramienta de visual studio de avisara y no se compilara el proyecto.
+
+¿cuando compilar un proyecto?
+cuando se requiera probar dlls.

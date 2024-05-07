@@ -1,0 +1,19 @@
+sets: es una estrucutra de datos, es una colleccion de datos unicos entre si.
+
+un set se crea da la siguiente manera 
+
+const ordersSet = new Set("iterable"); // cualquier iterable como un array por ejemplo 
+
+const ordersSet = new Set(['pasta', 'pizza','pizza', 'rissoto']);
+
+esto devolvera un set de tamaño 3, todos lo valores seria unicos por lo que cualquier duplicado no seria agregado, el set seria el siguiente.
+
+set(3) {'pasta','pizza','rissoto'}
+
+los sets tambien son iterables
+
+adiferencia de los arreglos los sets no importa el orden y su tamaño se mide con .size en lugar de .length
+
+por lo general solo se utilizan los sets para meter datos y no para trear ya que todos los datos son diferentes y el orden no importa pero si quieres guardar datos en algun orden en especifico mejor utiliza un array.
+
+no es recomendable utilizar sets si necesitas manipular datos.

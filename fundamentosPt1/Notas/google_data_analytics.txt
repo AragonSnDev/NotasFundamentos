@@ -1,0 +1,12 @@
+¿que es data? una colleccion de hechos en forma de numeros, imagenes, palabras, observaciones entre otras cossas.
+
+¿que es analisis de datos? es la recolleccion,transformacion y organizacion
+de data en orden de llegar a conclusiones, hacer predicciones y tomar decisiones infromadamente.
+
+Fases del proceso de analisis de datos
+1-pregunta
+2-prepara
+3-procesa
+4-analiza
+5-comparte
+6-actua

@@ -1,0 +1,88 @@
+Maps: es una estrucura de datos en donde le asignamos llaves a los valores, al igual que un objeto pero con la diferencia que las llaves de un map puede ser de cualquier tipo (num, strings, inclusive objetos) y en un objeto siempre seran strings.
+
+como se declara un map?
+
+const rest = new Map();
+
+rest.set('name','classico italiano');
+rest.set(1,'firenze italy);
+rest.set(2,'lisbon, Portgal);
+
+el map tendria la sigueinte estructura.
+
+{
+    0: {"name" => "classico italiano"},
+    1: {1 => "firenze italy"},
+    2: {2 => lisbon, Portgal}
+}
+
+podemos hacer sets en cadena ya que el metodo set regresa el map actualizado.
+
+si queremos trer un elemento lo hariamos con
+
+rest.get('name'): trae 'classico italiano'
+rest.get(1): trae 'firenze italy,
+
+
+si queremos eliminar un objeto 
+
+rest.delete("key") por ejemplo 
+
+rest.delete("name"): elimina "classico italiano" del map 
+rest.delete(1): elimina 'firenze italy"
+
+si queremos sabe si tiene un elemento lo hariamos
+
+rest.has(key) devuelce true o false si existe un elemetno con la llave
+
+los maps tienen un propiedad size que regresa el tamaño del map 
+
+rest.clear() para eliinar todos los elementos.
+
+en caso de tener un arreglo como llave 
+
+ej.
+
+rest.set([1,2] ,"test");
+
+y buscar la informacion del map con esa llave 
+
+rest.get([1,2])
+
+get devolvera indefinido ya que [1,2] es un tipo referenciado, osea que al hacer la instruccion anterior estamos utilizando otro arreglo en el heap de js y no el arreglo original asi que para solucionar y manejar correctameente este tipo de casos debemos hacelo de la siguiente manejar
+
+const arr = [1,2]
+rest.set(arr ,"test");
+rest.get(arr) -> devuelve "test".
+
+estos casos pueden ser muy utiles para objetos del dom
+
+podemos crear un map con todos sus elementos con un arreglo de arreglos de la siguiente forma.
+
+const quesion = new Map([
+    ['question', 'best languaje in the world?'],
+    [1, 'c'],
+    [2, 'java'],
+    [3, 'javascript'],
+    ['correct',3],
+    [true, 'Correct!'],
+    [false, 'Try Again']
+])
+
+converti un objeto a map
+
+const objetoMapa = new Map (Object.entries(objeto))
+
+iteraion de maps con for of 
+
+console.log(question.get('question'));
+for (const [key,value] of question) {
+    if(typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('your answer'));
+console.log(answer);
+
+convertir map a arreglo a
+
+const arrMap = [...question];

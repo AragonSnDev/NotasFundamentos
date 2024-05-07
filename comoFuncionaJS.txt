@@ -1,0 +1,128 @@
+¿que es javascript? es un lenguaje de programacion que cuenta con las siguientes caracterisitcas.
+
+Alto nivel: quiere decir que el lenguaje cuenta con abstracciones que permiten general codigo sin tener que manipular recursos como memoria de forma manual, estos lenguajes son mas lentos y no se puede optimizar tantoc como lenguajes de bajo nivel pero son mucho mas faciles de aprender.
+
+Recolector de basura: es una de esas abstracciones, basicamente quiere decir que js tiene un algoritmo que se encarga de limpiar la memoria de variables y  objetos que el programa ya no necesita.
+
+Interpretado: o compilado JIT (just in time): es la "traduccion" de lenguaje de programacion en forma de lenguaje legible para humanos a lenguaje maquina, este paso de compila se realiza dentro el motor de JS.
+
+Mulltiparadigma:un paradima es un enfoque y mentalidad de estruturacion de codigo, la cual dirije tu estilo y tecnica de codificacion. al ser Mulltiparadigma js cuenta con la flexibilidad de programar en 3 paradigmas distintos.
+
+1. Programacion Procedural: es un estilo de programacion mas lineal.
+2. Orientado a objetos.
+3. Programacion Funcional
+
+Basado en Prototipos y  orientado a objetos: En JS TODO es un objecto exepto valores primitivos como number, strings, etc. por lo que podemos usar funciones gracias a la herencia de prototipos
+por ejemplo un arreglo pude utilizar metodos como push y pop por que el objecto array hereda estos metodos del prototipo array.
+
+Funciones de primera clase: quiere decir que las funciones son tratadas como variables, podemos pasalas a otras funciones y regresar otras funciones.
+
+Lenguaje dinamicamente tipado: quiere decir que no equiere definicion de tipos en sus variables ya que estas se dan a conocer en tiempo de ejecucion y el tipo de la variable puede cambiar automaticamente durante tiempo de ejecucion.
+
+modelo de concurrencia: es como el motor de javascript maneja multiples tareas que ocurren al mismo tiempo a que javascript corre sobre un solo hilo, lo que quiere decir que solo puede hacer una cosa a a la vez y en caso de que una tarea tarda demasiado, estas las ejecuta en segundo plano y las evuelve al hilo pricipal ya que estas terminen.
+
+¿que es el motor de javascript? es un programga que se encarga de ejecutar codigo de javascript, este motor depende del navegador que estes utilizando, el mas conocido es V-8 de google el cual se utilza en google chrome y node.js.
+
+componentes de el motor de js:
+
+callstack: es donde se ejecuta el codigo de js.
+heap:es donde se almacenan los objetos creados en el codigo.
+
+compilacion vs interpretacion:
+
+compilacion: el codigo entero se convierte a codigo maquina en un solo paso y se escribe en un archivo en binario que puede ser ejecutado por la computadora.
+interpretacion: el codigo se ejecuta linea por linea.
+
+los lenguajes interpretados tienen a ser mas lentos que los compilados, lo cual solia no ser un problema para js pero js moderno y aplicaciones modernas esto ya no es aceptable y ahora js utiliza compilacion JIT, la cual es un hibrido entre ambas formas de ejecutar codigo.
+
+compilaion JIT: el codigo entero se convierte en codigo maquina en un solo paso y se ejecuta inmediatamente por lo queno se genera un archivo binario.
+
+flujo de como ejecuta el codigo el motor de js
+
+0.entre codigo al motor.
+
+1.este codigo se parsea (el motor lee el codigo), durante este paso el codigo se parsea en una estructura de datos llamda AST (abstract syntax tree), esto funciona dividiendo todas y cada una de las lineas de codigo en piezas con codigo que es relevante para el lenguaje (como declaraciones de variables o funciones) y guarda cada una de estas piezas dentro el AST de forna estructurada este paso tambien verfica si no hay errores de compilacion. y el arbol resultade se utilizara para geenerar el codigo maquina.
+
+2. compilacion: en este paso se converite el AST en codigo maquina, este codigo maquina directamente al paso 3.
+
+3. ejecuta el codigo maquina en lo que se conoce como el Call Stack.
+
+el codigo maquina genrado termina no siendo muy optimo esto con el propocito de ejecutar codigo lo mas rapido posible, este codigo se optimiza y recompila muchas veces durante tiempo de ejecucion y se va intercambiando el codigo maquina y este proceso es el proceso que realiza el motor v8 de google en otros hilos propios del motor separados el motor principal de js.
+este proceso varia segun del motor.
+
+
+javascript runtime :es un contenedor que incliye todas las cosas que necesitamos para utlizar js (como el navegado). el corazon del runtime es el motor de js pero para que el runtime funcione correctametne se necesitan web apis y un callback queue
+
+una web api de js son funcionalidades para que el motor funcione correctametne, js tiene acceso a estas apis a travez del objeto global "window"
+
+un callback queue: es una estructura de datos que tiene todas los callbacks que se esperan ser ejecutar (por ejemplo un click a un botton co su callback).
+
+proceso de ejecucion de callbacks.
+
+1. inserta los callbacks en el callback queue despues de que se ejecuta un evento como un click.
+2. si el call stack esta vacio, la funcion callback que esta en el callback queue se inserta en el call stack mediante el event loop.
+3. se ejectua el callback en el call stack.
+
+una vezque el codigo esta compilado y listo para ejecutarse se crea un contexto de ejecucion global para el codigo de algo nivel (codigo que no pertenece a ninguna funcion)
+
+
+¿que es el contexto de ejecucion de js? es basicamente un ambiente en el que un pedaso de codigo de js es executado, se almacena toda la informacion necesaria para ejecutar una parte del codigo como variables locales o argumentos de una funcion.
+
+en un ambiente de js solo existe un contexto de ejecucion global por defecto y aqui es donde se ejecuta el codigo de alto nivel y una vez ejecutado este codigo se procede a ejecutar el codigo que esta dentro de funciones, para esto se crea un contexto de ejecucion por funcion.
+
+porceso de ejecucion en js:
+1. se crea el contexto de ejecucion global.
+2. se ejecuta el codigo de alto nivel.
+3. se ejecutan las funciones y espera de sus callbacks
+
+
+de que esta compuesto el contexto de ejecucion?
+1. variable enviroment: aqui se almacena todo, nuestras variables y funcoines mas un objeto especial denominado arguments que contiene todos los argumentos de las funciones que pertenecen al contexto de ejecucion.
+2. scope chain: consiste de referencias a variables que esta fuera del alcance de la funcion y para darle seguimiento a el scope chain se crea uno por contexto de ejecucion.
+3. cada contexto de ejecucion se le asgina una variable llamada "this"
+
+estos elementos se crean durante la fase de ejecucion ANTES de la ejecucion de codigo.
+
+nota: funciones de flecha no contienen la variable enviroment o this pero pueden usar la de la funcion o alcance mas cercano.
+
+el callstack es la parte del motor de js que se encarga de darle seguimiento a los contextos de ejecucion y saber cual funcion se esta ejecutando y donde en el punto de ejecucion se encuentra.
+el callstack se encarga de almacenar todos los contextos de ejecucion del programa y ejecurtarlos en el orden necesario.
+
+¿que es scoping?es como las variables de nuestros programas son organizadas y accedidas.
+
+lexical scoping: es un tipo de scopin que es controllado por la posicion de la funcion y bloques de codigo.
+
+scope:es el espacio o ambiente en el cual ciertas variables son declaradas (como la variable enviroment en caso de las funciones). hay  3 tipos de scope, scope global, scope de funcion y scope de bloque
+
+el scope de una variable: es toda la region de nuestro codig donde una variable puede ser accedida.
+
+scope global: abarca todo lo que este afuera de una funcion, estas variables pueden ser accedidas de cualquier lugar.
+
+fuction scope: las variables solo pueden ser accedidas por fuera de las funciones (tambien se le llama scope local).
+
+block scope: abarca todo lo  que esta dentr de {} solo se pueden usar con let y const las funciones cuentan con este tipo de socpe en ES6 (solo en modo estricto)
+
+scope chain: es la capacidad de un scope de buscar una variable que este fuera de su propio scope
+
+hoisting: es una mecanismo que escanea por declaraciones de variabls y por cada variable una propiedad es creada en el objecto de variable de ambiente.
+
+declaraciones de funciones: se hoistean, su valor inicial es la funcion en si, tiene scope de bloque
+variables declaradas con var: se hoistean , su valor inicial es undefined, su scope es de tipo funcion.
+variables con let y const: no se hostean (tecnicamente si pero se van a una TDZ que es zona temporal muerta), su valor inicial es <uninitializaed>, tipo de scope es bloque.
+funciones expresiones: depende si son declaradas con let,var y const.
+
+TDZ: es un "area" antes de la declaracion de una variable donde no se puede usar creando un reference error donde la variable no se puede accder antes de inicializarse.
+
+por que metieron TDZ? por que hace mas facil de debuggeaar errores ya que acceder variables antes de su declaracion es una mala practica y permite que const funcione como deberia.
+
+por que existe hoisting? para poder usar declaracion de funciones como en otros lenguajes, hoisting para var es una concecuencia de esa funcionalidad. 
+
+como funcione la palabra clave "this": es una variable especial que es creada por cada contexto de execucion (osea cada funcion) y toma el valor (o apunta) al dueño de la funcion donde la palabra this sea usada.
+
+esta variable no es statica, depende de como se manda a llamar y solo se le asigna valor cuando la funcion se llama, cuando se llama a una funcion el valor de this es undefined y las arrow funcion tien a lo que se le llama un this lexico, que es el this de la funcion que rodea la arrow function
+
+
+this en el scope global = objeto window
+this adentro de una funcion expresion = (strict mode) = undefined
+this adentro de una funcion expresion = (no strict mode) = objeto window
+this adentro de una funcion arrow = objeto window

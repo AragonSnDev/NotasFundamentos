@@ -1,0 +1,66 @@
+funciones basicas de objetos
+
+Object.keys(objeto): Devuelve un array de strings que representan las claves/propiedades enumerables del objeto.
+Object.values(objeto): Devuelve un array de los valores de las propiedades enumerables del objeto.
+Object.entries(objeto): Devuelve un array de arrays, donde cada array interno contiene un par [key, value] correspondiente a cada propiedad enumerable del objeto.
+Object.assign(objetivo, ...fuentes): Copia los valores de todas las propiedades enumerables de uno o más objetos fuente al objeto objetivo y devuelve el objeto objetivo modificado.
+Object.freeze(objeto): Congela un objeto, lo que significa que no se pueden agregar, eliminar o modificar sus propiedades existentes.
+Object.seal(objeto): Sella un objeto, lo que significa que no se pueden agregar ni eliminar propiedades, aunque sí se pueden modificar las propiedades existentes.
+Object.defineProperty(objeto, propiedad, descriptor): Añade o modifica una propiedad en el objeto con el descriptor dado.
+Object.getOwnPropertyDescriptor(objeto, propiedad): Devuelve un descriptor de propiedad para una propiedad específica en el objeto.
+
+funciones basicas de arrays
+
+push(elemento1, elemento2, ...): Agrega uno o más elementos al final del array y devuelve la nueva longitud del array.
+pop(): Elimina el último elemento de un array y lo devuelve.
+shift(): Elimina el primer elemento de un array y lo devuelve, ajustando los índices de los elementos restantes.
+unshift(elemento1, elemento2, ...): Agrega uno o más elementos al inicio del array y devuelve la nueva longitud del array.
+slice(inicio, fin): Devuelve una copia superficial de una porción de un array entre los índices especificados inicio y fin (no incluido). Si no se especifica fin, devuelve desde inicio hasta el final del array.
+splice(inicio, cantidad, elemento1, elemento2, ...): Cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos en su lugar.
+concat(array1, array2, ...): Combina dos o más arrays y devuelve un nuevo array que contiene los elementos combinados.
+indexOf(elemento, inicio): Devuelve el primer índice en el que se encuentra un elemento dado dentro del array, o -1 si no se encuentra. Puedes proporcionar un segundo parámetro opcional para especificar el índice desde el que comenzar la búsqueda.
+lastIndexOf(elemento, inicio): Devuelve el último índice en el que se encuentra un elemento dado dentro del array, o -1 si no se encuentra. Puedes proporcionar un segundo parámetro opcional para especificar el índice desde el que comenzar la búsqueda en reversa.
+forEach(callbackFunction(elemento, indice, array)): Ejecuta una función dada una vez por cada elemento del array.
+map(callbackFunction(elemento, indice, array)): Crea un nuevo array con los resultados de llamar a una función proporcionada en cada elemento del array.
+filter(callbackFunction(elemento, indice, array)): Crea un nuevo array con todos los elementos que cumplan con cierta condición dada por la función de prueba.
+reduce(callbackFunction(acumulador, elemento, indice, array), valorInicial): Aplica una función a un acumulador y a cada elemento del array (de izquierda a derecha) para reducirlo a un solo valor.
+sort(comparador): Ordena los elementos de un array localmente y devuelve el array ordenado. Por defecto, la ordenación se realiza por orden Unicode de los valores de la cadena convertidos.
+reverse(): Invierte el orden de los elementos en un array.
+
+funciones comunes de Sets 
+
+add(value): Añade un nuevo valor al set.
+delete(value): Elimina un valor del set.
+has(value): Verifica si un valor existe en el set.
+size: Devuelve el número de elementos en el set.
+clear(): Elimina todos los elementos del set.
+forEach(callbackFunction): Ejecuta una función dada una vez por cada valor en el set, en orden de inserción.
+entries(): Devuelve un iterador que contiene los pares [value, value] para cada valor en el set, en orden de inserción. Esto es para la compatibilidad con los métodos de iteración de ES6 como for...of.
+values(): Devuelve un iterador que contiene todos los valores en el set, en orden de inserción. Esto también es para la compatibilidad con los métodos de iteración de ES6.
+
+funciones comunes para Maps de
+set(clave, valor): Establece un par clave-valor en el Mapa. Si la clave ya existe, se actualizará su valor.
+get(clave): Devuelve el valor asociado con la clave especificada en el Mapa, o undefined si la clave no existe en el Mapa.
+has(clave): Verifica si el Mapa contiene la clave especificada. Devuelve true si la clave existe, de lo contrario, devuelve false.
+delete(clave): Elimina la entrada asociada con la clave especificada del Mapa, si existe.
+clear(): Elimina todas las entradas del Mapa, dejándolo vacío.
+size: Devuelve el número de entradas (pares clave-valor) en el Mapa.
+forEach(callbackFunction(valor, clave, mapa)): Ejecuta una función proporcionada una vez por cada par clave-valor presente en el Mapa, en orden de inserción.
+keys(): Devuelve un nuevo objeto iterador que contiene las claves de cada elemento en el Mapa, en orden de inserción.
+values(): Devuelve un nuevo objeto iterador que contiene los valores de cada elemento en el Mapa, en el mismo orden que las claves.
+entries(): Devuelve un nuevo objeto iterador que contiene los pares [clave, valor] para cada elemento en el Mapa, en orden de inserción.
+
+funciones comunes para strings:
+length: Este método devuelve la longitud de una cadena, es decir, la cantidad de caracteres que contiene.
+charAt(index): Permite acceder al carácter en una posición específica dentro de la cadena. Se le pasa como argumento el índice del carácter que se desea obtener.
+concat(string1, string2, ...): Concatena dos o más cadenas y devuelve una nueva cadena resultante de la unión de las cadenas pasadas como argumento.
+indexOf(substring): Devuelve la posición del primer carácter de la primera ocurrencia de la subcadena especificada dentro de la cadena original. Si la subcadena no se encuentra, devuelve -1.
+lastIndexOf(substring): Similar a indexOf(), pero devuelve la posición del primer carácter de la última ocurrencia de la subcadena dentro de la cadena original.
+toUpperCase(): Convierte todos los caracteres de la cadena a mayúsculas.
+toLowerCase(): Convierte todos los caracteres de la cadena a minúsculas.
+substring(startIndex, endIndex): Devuelve una subcadena que abarca desde startIndex hasta endIndex-1. Si se omite el endIndex, se devuelve la subcadena desde startIndex hasta el final de la cadena.
+slice(startIndex, endIndex): Similar a substring(), devuelve una subcadena desde startIndex hasta endIndex-1. Si se pasa un índice negativo, cuenta desde el final de la cadena. Si se omite el endIndex, se devuelve la subcadena desde startIndex hasta el final de la cadena.
+split(separator): Divide una cadena en un array de subcadenas, utilizando el separador especificado. Se puede utilizar para separar una cadena en palabras, por ejemplo.
+trim(): Este método elimina los espacios en blanco al principio y al final de una cadena y devuelve la cadena resultante. Los espacios en blanco incluyen espacios, tabulaciones y saltos de línea. Es útil cuando necesitas limpiar una cadena de texto de caracteres no deseados alrededor de su contenido principal.
+replace(oldValue, newValue): Este método busca todas las ocurrencias de un valor específico en una cadena y las reemplaza con un nuevo valor. Devuelve una nueva cadena con las sustituciones realizadas, pero no modifica la cadena original. Es útil para realizar cambios en una cadena sin alterar la original.
+replaceAll(oldValue, newValue): Este método busca todas las ocurrencias de un valor específico en una cadena y las reemplaza con un nuevo valor. A diferencia del método replace(), que solo reemplaza la primera ocurrencia, replaceAll() reemplaza todas las ocurrencias en la cadena. Devuelve una nueva cadena con todas las sustituciones realizadas, pero no modifica la cadena original.

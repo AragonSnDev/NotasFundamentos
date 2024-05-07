@@ -1,0 +1,211 @@
+¿que es php? Hypertext Preprocessor, este lenguaje no es compilado sino que se ejecutan scripts de php.
+
+ventajas de php
+
+es gratis, multiplataformas, esta diseñado para la web, funciones para conectar a bases de datos ya definidas, facil comparado con otras opciones. puede o no ser orientado a objectos,
+incluido en casi todos los servicios de hosting, permite conectarse a 12 base de datos distintas.
+
+como fuciona php y mysql.
+al entrar a un sitio web estos cargan scripts de php, estosr scripts bandan a consultar a una base de datos, una vez consultados estos viajan de regreso de al sitio web.
+
+¿es php inseguro?
+php cuenta con muchas funciones de seguridad, puede hashear contraseñas, sentencias preparadas y puede filtrar y validad entrada de datos.
+
+syntaxis de php
+
+todos los bloques de php comienzans con "<?php" estos bloques pueden cerrarse con "?>" pero esto no es obliigatorio mas que en ciertos casos especiales todo lo que no este en este bloque sera considerado y tratado como html.
+
+echo: es una funcion de php que muestra informacion que se se le mande en pantalla del navegador.
+print: funciona muy parecido a echo, muetra informacion que se se le mande en pantalla del navegador
+print_r: funciona muy parecido a echo, muetra informacion que se le mande.
+var_dump: muestra informacion detallada sobre lom que se le mande, ya sea un arreglo o una variable entre muchas otras cosas.
+include: agrega archivos al scripts
+
+variables en php
+inician con $ y un nombre que no comienze con numeros u otros caracteres especiales
+ej. $variable = 'valor';
+
+echo $variable;
+
+constantes en php
+se definen con la funcion define. no comienzan con $ ni otros caracteres especiales o numeros
+define('constante',valor);
+
+echo constante;
+
+tipos de dato en php:
+
+php cuenta con los sigueintes tipos de datos funcionan igual que en js.
+
+boolean: $logueado = true; //o false
+enteros: $entero = 200; 
+floats: $float = 112.40;
+strings: $string = "string";
+arrays: $arrays = [];
+
+numeros y operadores son iguales o muy parecidos a js 
+$numero1 = 20;
+$numero2 = 30;
+
+echo $numero1 + $numero2; //implime 50;
+echo $numero1 - $numero2; //implime -10;
+echo $numero1 * $numero2; //implime 600;
+echo $numero1 / $numero2; //implime 1.5;
+
+el operador ** sirve para elevar a una potencia
+echo $numero1 ** 4; //cuatro veces el $numero
+
+comparadores en php muy similares a js
+
+>: mayor que.
+<: menor que.
+<=: menor igual que.
+>=: mayor igual que.
+==: igual a.
+===: igual a estricto.
+el sigiente operador no se encuentra en js.
+<=>: si el numero de la izquiereda es menor regrega 1, si son iguales regresa 0, si el de la derecha en mayor entonces -1.
+
+Concatenar variable
+
+hay dos maneras con '.' y con '{}'.
+
+ej1. "el cliente ".$nombre." es ".$tipoCliente;
+ej2. "el cliente {$nombre} es {$tipoCliente}";
+
+ambos regresan el mismo resultado
+
+incrementos en php son muy similares a js
+
+$numero = 10;
+echo $numero++; //imprime 10 ya que primero imprime y luego suma
+echo ++$numero; //imprime 12 ya que primero suma y luego imprime;
+
+Funciones para strings en php
+
+strlen($string): regresa la longitud de una cadena de caracteres
+trim($string): elimina los espacios en blanco que esten alrededero de el string.
+strtoupper($string): regresa un string en mayus.
+strtolower($string): regresa un strign en minus.
+str_replace('valor a remplazar','valor de reemplazo',$string): rempleaza el valor en la cadena.
+strpos($string): busca la posicion donde se encuentra un substring dentro del string.
+
+Arreglos
+
+hay dos tipos de arreglos en php, indexados y asociativos
+
+arreglos indexados: se crean de dos formas
+
+$carrito = []; o $carrito = array();
+
+agregar elementos al arreglo
+
+$carrito = ['tablet','television','computadora'];
+
+acceder a un elemento de un arreglo
+
+$carrito[1]: regresa "television".
+
+agregar un elemento
+
+$carrito[3] = "nuevo produto".
+
+$carrito es ['tablet','television','computadora','nuevo produto'];
+
+agregar con funcion
+
+array_push($arreglo, $nuevoElemento): agrega elementos al final del arreglo.
+array_unshift($arreglo,$primerElemento): agrega elementos solo al inciio del arreglo.
+
+arreglos asociativos: son muy similares a los objectos en javascritpt
+
+ej.
+
+$cliente = [
+    'nombre' => 'Juan',
+    "saldo" => 300,
+    "informacion" => [
+        "tipo" => 'Premium'
+    ]
+]
+
+para acceder a las propiedades del arreglo
+echo $clientes["nombre]; regresa "Juan".
+echo $clientes["informacion"]["tipo"]: regresa "Premium".
+
+agregar propiedades a un arreglo asociativos: 
+
+$cliente["codigo"] = 21414141;
+
+funcion isset() y empty();
+
+empty($arreglo): regresa si un arreglo esta vacio o no.
+isset($arreglo): va a revizar si un arreglo o alguna propiedad de un arreglo esta creada o esta definida.
+
+in_array('valor',$arreglo): nos trae elementos en un arreglo
+sort($arreglo): ordena elementos de un arreglo indexado de menor a mayor
+rsort($arreglo): ordena elementos de un arreglo indexado de mayor a menor
+asort($arreglo): ordena elementos por el valor en orden alfabetico de los elementos de un arreglo asociativo
+arsort($arreglo): ordena elementos por el valor en orden alfabetico descendente de los elementos de un arreglo asociativo
+ksort($arreglo): ordena elementos por la llave en orden alfabetico de los elementos de un arreglo asociativo
+krsort($arreglo): ordena elementos por la llave en orden alfabetico descendente de los elementos de un arreglo asociativo
+
+
+condicionales en php
+if: funciona igual que en js
+else: funcona igual que en js
+switch: funciona igual que en js
+
+loops
+while: funciona igual que en js
+do while: funciona igual que en js.
+for: funciona igual que en js
+
+
+funciones importantes de php
+
+declarar una funcion
+
+function nombre($param1,$param2){
+    /*
+        logica de la funcion
+    */
+
+    return 'valor de retorno';
+
+}
+
+mandar a llamar la funcion
+$resultado = nombrefuncion($var1,$var2);
+echo $resultado; //regresa el valor de retorno
+
+tipar funciones
+function nombre(string $param1, string $param2) : string|int{ //se le puede declarar tipo a los paramentros poniendo el tipo por un lado, y se puede definir que tipo de valor regresara la
+// funcion poniendo : y el tipo despues de los paramentros y antes de las llaves, se pueden declarar varios tipos de valores de retorno con | y se puede retornal null con ? antes del tipo de valor de retorno
+    /*
+        logica de la funcion
+    */
+
+    return 'valor de retorno';
+}
+
+parametros nombrados: se definir el nombre de la variable de la funcion de la siguiente forma
+
+nombre(param:'valor',param2: 'retorno); de esta forma podemos definir el orden de los parametros en un orden diferente y la funcion funcionara de la misma forma
+
+include: es una expresion que nos permite incluir otros archivos en nuestro script de php, lo cual nos permite reutilziar codigo.
+requiere: funciona similar a include, con la diferencia de que en caso de equ ese archovo no exista fuerze un error a novel de compilacion.
+
+se recomienda usar include para incluir cosas no tan importantes y require para cosas que son absolutamente encesarias para la ejecucion del script
+
+json_encode($arreglo, $tipoCodifacion): es una funcion convierte un arreglo asociativo en un json string se le puede agregar un tipo de codificacion de ser necesario como un segundo parametro opcional.
+json_decode($string): es una funcio convierte un json string en un arreglo asociativo.
+
+conectarte a la base de datos
+en php necesitamos un driver para podernos conectar a la base de datos, afortunamente ya tenemos incluido uno en la instalacion de php8
+para habilitar este driver necesitamos modificar el php.ini
+
+tenemos 2 tipos de driver para manipular bds, una de ellas es mysqli que sirve sola mente para conectarnos con mysql y tenemos pdo, que nos sirver para conectarnos a 12 tipos de base de datos diferentes como
+mysql,oracle, postgresql, sqlite.
+
+diferencias entre mysqli y pdo: mysqli funciona mediante funciones que empiezan con mysqli_ o mediante objectos y pdo funciona solamente mediante la creacion de un objeto

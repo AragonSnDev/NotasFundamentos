@@ -1,0 +1,10 @@
+estructuras condicionales:
+
+if, else 
+
+return: palabra clave que termina el bloque de codigo donde se llama inmediatamente.
+
+string.IsNullOrEmpty(var): es un metodo que devuelve true si la variable es null o tiene un string vacio "".
+
+tipo.TryParse(varAConvertir, out varResultado): metodo que intenta convertir de string a int  y si no se puede se devuelve false, si no asigna el resultado a una variable, la palabra reservada "out" indica que se devuelve una salida.
+

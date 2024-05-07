@@ -1,0 +1,128 @@
+¿que es sass?
+Sass (Syntactically Awesome Style Sheets) es un preprocesador de CSS. Básicamente, 
+es una extensión de CSS que permite utilizar características adicionales y mejorar la eficiencia en el proceso de creación 
+y mantenimiento de hojas de estilo.
+
+ventajas de sass
+mejor orden y estructura: sass nos permite separar archivos de hoja de estilos en diferentes archivos y al final se compila 
+en unsa sola.
+
+contiene características que css no tiene o tiene mejor soporte. puedes escribir codigo css en sass
+
+nos permite 'anida' elementos dentro de otros.
+
+desventajas de sass:
+se debe de compilar con una herramienta especial, no es nativo del navegador
+por lo que debe ser compilado a .css con herramientas como webpack o gulp
+
+al anidar muchos elementos puede causar poblemas de escalabilidad por lo
+que se debe tener cuidado con ellos.
+
+variables en sass:
+
+declaracion de variables
+
+$variable : valor;
+ej.
+
+$color: #e1e1e1;
+$separacion: 5rem;
+
+sass o scss? ambos son sass pero tienen diferente sintaxis, actualmente la mas comune
+es .scss
+
+anidacion en .sass vs .scss
+.sassss
+.header
+    display:flex;
+    .logo
+        margin-top: 10px;
+
+.scss
+    display:flex;
+    .logo{
+        margin-top: 10px;
+    }
+
+¿que es gulp?
+nos permite automatiza tareas que son repetitivas en desarrollo web como:
+
+compilar sass y js.
+crear imagenes mas ligeras o la version webp.
+minificar y mejorar tu codigo para produccion
+
+gulp utiliza js.
+
+pipes: es una accion que ejecuta y una vez que se finaliza se ejecuta otra y otra;
+el orden esta definido por el mismo pipe.
+
+Instalar Sass
+Para instalar sass necesitar correr el comando 'npm install sass', esto creara las dependencias en package.json
+una vez creada la dependecia ya podremos compilar un archivo sass.
+
+Antes de compilar SASS
+primero necesitamos dos cosas, tener un archivo .sass o .scss que vamos a compilar
+y agregar un script en package.json 
+
+"sass": "sass --watch 'ruta del archivo'"
+
+nota: cuando necesitemos crear un script que se ejecute cada vez que se genere 
+un cambio en un archivo utilizamos --watch, para que deje leer cambios necesitamos presionar ctrl-c en la consola
+
+Compilar SASS
+una vez teniendo lo anterior podemos compilar sas con el comando 'npm run sass', esto ejecutara el script 
+que creamos anteriormente y nuestro archivo sass estara compilado
+
+instalando GULP
+npm install gulp
+
+gulpfile: es un archivo donde se programaran las tareas del workflow
+
+que es NPX?es una herramienta que se incluye con npm. Te permite ejecutar paquetes Node. js que están instalados local o globalmente en tu proyecto
+
+las funciones de gulp necesitan recibir un callback (una funcion ue se manda a llamar ya que termine una funcion)
+para que finalize la tarea
+
+Compilar SASS con GULP  
+para compilar sass con gulp necesitamos realizar 3 pasos
+
+1. Identificar el archivo sass
+2. ejecutar las funciones de sass (compilarlo).
+3. Almacenar en el disco duro
+
+para identificarlo GULP con tiene funciones que facilitarn la ejecucion de tareas.
+
+src: es una funcion que nos permite identificar un archivo o una serie de archivos
+dest: es una funcion que nos permite almacenar algo en una carpeta destino.
+watch: es una funcion que nos permite 
+
+¿como incluir un archivo sass como parte del archivo principal?
+nombrando el archivo con un '_' al principio
+ej. _variables.scss
+
+esta manera sass idenficara que ese archivo debe integrarse con el archivo 
+principal y asi no creara dos archivos .css
+
+Importar archivos sass
+ 
+hay dos maneras 
+
+forma antigua 
+ej. @import 'dir/archivo' 
+
+Nota: no se necesita agregar el '_' o '.sass' al archivo, sass lo identifica inmediatamente
+
+forma actual
+Nota: esta forma requeire que cada una de nuestras carpetas debe tener un archivo llamado
+'_index.scss' en el cual tendra lo siguiente
+
+@forward 'nombre del archivo';
+
+y despues en el archivo principal se necesite utilizar 
+
+@use 'nombre del archivo'
+
+Nota:para ver los cambios de otros archivos se necesitan compilar con gulp
+
+Mixins: es una pieza codigo de ccs que podemos reutilizar en nuestra oja de stylos
+

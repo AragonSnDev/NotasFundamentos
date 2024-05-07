@@ -1,0 +1,19 @@
+c# es un lenguaje que compila en lugar de interpretar.
+
+paso a paso de como se construyen internamente los programas de c# y como se ejecutan en nuestra computadora.
+
+1. se escribe el codigo del programa en C#.
+2. este pasa por el compilador, el cual se encarga de comprobar que el programa no tenga errores de sintaxis
+3. si el programa no tiene ningun tipo de problema procede el proceso de compilacion interno y se genera un dll.
+
+dll: es el resultado de la compilacion tu codigo original y lo convierte a un lenguaje llamado msil.
+
+msil: microsoft intermadiate lenguage, es un lenguaje que se encuentra entre los ambientes de lenguaje C# y lenguaje maquina.
+
+4. una vez con el archivo dll se manda al CLR y se compila en el JIT compiler.
+
+CLR: common lenguage runtime, es el ambiente donde se ejecuta y se compila la DLL mediante el JIT compiler
+
+JIT compiler: es el encargado de convertir el codigo a codigo binario.
+
+5. una vez con compilado se ejecuta el programa desarrollado por el programador.

@@ -1,0 +1,12 @@
+Lógica Booleana:
+es la lógica de que utiliza valores true/false para resolver diferentes tipos de problemas.
+
+tablas de verdad
+
+A === true && B === true: true
+A === true && B === false: false
+A === false && B === true: false
+A === false && B === false: false
+
+esta lógica nos permite modelar lógica compleja en nuestro 
+código manejando diferentes flujos según las operaciones lógicas.

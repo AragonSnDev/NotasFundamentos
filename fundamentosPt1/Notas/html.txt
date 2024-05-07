@@ -1,0 +1,7 @@
+<-------------------------CHECKLIST HTML------------------------>
+
+Utilzar las estiquetas <header>,<main>, <section>, <footer> y <div> apropiadamente.
+cada </div> debe ser comentado con la clase css correspondiente a su <div>.
+indentar corresctamente cada elemento con su respectiva etiqueda padre.
+Agregar normalize.css.
+El logitipo debe llevar a la pagina principal

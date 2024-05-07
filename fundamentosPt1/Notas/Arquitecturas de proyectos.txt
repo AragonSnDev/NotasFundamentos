@@ -1,0 +1,5 @@
+Espaguetti: es un codigo desordenado, es muy facil pero no es recomendable por que se puede salir de control.
+
+API:se consulta una base de datos par aimprimir los resultados como json y mostrarlos con javascript, ideal para usarse con frameworks como vue, angular, react o apps moviles.
+
+MVC: model view controller, es una arquitectura muy avanzada, es ideal para estructurar y organizar tu proyecto, se debe conocer la POO.

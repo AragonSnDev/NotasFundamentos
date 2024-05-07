@@ -1,0 +1,475 @@
+<----------------Variables en JS-------------->
+
+Las variables pueden iniciar con o sin valor.
+JS es un lenguaje dinamico por lo que el tipo de variable puede cambiar en tiempo de ejecucion.
+hay diferentes estilos para nombrar variables (underscore, camelCase y PascalCase), pero el estandar es utilizar camelCase.
+console.log para mostrar en consola.
+
+la palabra reservada 'var' ya no se utiliza ya que se cambio por la palabra reserveada 'let' o 'const'.
+
+las variables con let tienen las mismas caracteristicas que con var.
+
+las variables con const no se pueden inicializar variables SIN valor.
+las variables con const no se pueden reasignar su valor.
+
+typeof: nos sirve para ver el tipo de datos de las variables.
+
+<----------------Tipos de datos en JS-------------->
+los tipos de datos son el tipo de valor de las variables.
+diferentes tipos de datos nos permiten hacer diferentes tipos de operaciones.
+
+String: Son cadenas de texto.
+
+Funciones y propiedades de los tipos de dato String
+
+length: es una propiedad que regresa cuantos caracteres cuenta la cadena de texto.
+indexOf(texto): es una funcion que regresa la posicion de un texto en la cadena de texto.
+include(texto): es una funcion que regresa si el texto existe.
+
+Number: son valores numericos ya sean enteros, decimales, positivos o negativos.
+
+los numbers nos permiten hacer operaciones matematicas.
+
+operadores matematicos para manipular number:
+
++ para sumar.
+- para restar.
+* para multiplicar.
+/ para dividir.
+% para regregar el residuo
+
+<----------------Objeto Math-------------->
+
+el objeto Math contiene varias funciones que nos permiten hacer operaciones matematicas avanzadas.
+
+funciones de Math.
+
+PI: traer el valor de pi.
+round: redondea al numero entero mas cercano
+ceil: redondea hacia el numero hacia arriba sin importa que tan pequeño sea el decimal.
+floor: redondea hacia el numero hacia abajo sin importa que tan grande sea el decimal.
+sqrt: trae la raiz cuadrada.
+abs: trae el numero absoluto.
+min(n1,n2,...n): retorna el numero menor de los numeros proporcionados.
+max(n1,n2,...n): retorna el numero mayor de los numeros proporcionados.
+rand():trae un numero aleatorio del 0  al 1.
+
+
+<----------------Orden de operadores-------------->
+JS realiza sus operaciones matematicas con la jerarquia de operaciones
+
+primero lo que este entre '()'.
+luego va '*' o '/'.
+y por ultimo '+' o '-'.
+
+
+<----------------Incrementos y decrementos-------------->
+en JS podemos hacer incrementos y decrementos a nuestras variables numericas de la siguiente manera
+
+let puntaje = 10;
+incrementar
+puntaje++;
+
+decrementar
+puntaje--;
+
+<----------------Concatenacion y template string-------------->
+en ocaciones es necesario concatenar strings, esto se logra con el operador + 
+que cuanto se trata de strings funciona diferente, con strings une ambos strings.
+
+ej. nombre + ' ' + email
+
+otra forma de concatenar string es con template string (o strings literals).
+
+ej. `${nombre} ${email}`
+
+<----------------Booleanos------------------------------------------->
+
+los boolean solo tienen dos valores true o false, (1 o 0).
+
+
+<----------------Objetos------------------------------------------->
+
+un objeto es basicamente una variable que puede contener variables de diferentes tipos dentro.
+las "variables" que estan dentro de este objecto se le llaman propuedades
+
+las propuedades estan compuestas de una llave (basicamente el nombre de la propiedad) y un valor.
+
+hay dos formas de asignar propiedades a un objecto
+
+const producto = {
+    nombreProducto : "monitor 20 pulgadas",
+    precio : 100,
+    disponible: true
+}
+
+y en caso de tener otrar variables que compartan el nombre de la propiedad
+
+const nombreProducto = "monitor 20 pulgadas";
+const precio = 100;
+const disponible = true;
+
+const producto = {
+    nombreProducto,
+    precio,
+    disponible
+}
+
+para asignar a la propueda hay dos maneras con la 
+
+con la notacion de punto.
+
+ej. console.log(objecto.llave).
+
+o con [].
+
+console.log(objecto["llave"]).
+
+
+
+<----------------Destructuring de objectos------------------------------->
+
+Destructuring de objectos se refiera a extrar las propiedades de un objecto en variables
+
+ej. const {precio,nombreProducto} = producto;
+
+<----------------Funciones de objectoss--------------------->
+
+Object.freeze(objecto): impide que el objeto y/o sus propiedades se pueda modificar.
+Object.isFrozen(objecto): regresa true o false para ver si un objecto esta congelado.
+Object.seal(objecto): parecido a freeze, no permite modificar el objecto pero si sus propiedades.
+
+<----------------Operados Spread--------------------->
+
+el operados spread (...) nos permite juntar las propiedades de dos objectos
+
+ej. objectoFusionado = {...objecto1, ...objecto2}
+
+
+<----------------arreglos o arrays--------------------->
+
+los arreglos con un conjunto son basicamente un contenedor de varios objectos o variables.
+
+metodos de un arreglos
+
+length():te regresa la cantidad de elementos de un arreglo.
+forEach():una funcion que repite una serie de instruccion o lineas de codigo por la cantidad de elementos de un arreglo.
+push(elem): agrega un elemento al final del arreglo (pero no se recomienda modificar la cantidad de arreglos).
+unshift(elem): agrega un elemento al inicio del arreglo
+pop():elimina el ultimo elemento del arreglo
+shift(): elimina el primer elemento del arreglo.
+splice(elem,cant): este valor elimina elementos apartir del indice (elem) y la cantidade de elementos a especificar.
+includes(valor):buscar un elementos con ese valor (para arreglos planos o unidimensionales).
+some(funcion): recorre el arreglo buscando un elemento que cumpla con la condicion de la funcion .
+reduce(funcion): se le mandan dos funciones a la funcion, nos regresa un resultado.
+filter(funcion): regresa todos los elementos segun la condicion en la funcion.
+
+IMPORTANTE: no es recomendable que se modifiquen los arregles originales, lo que se recomienda es crear un arreglo nuevo con el operador spread.
+
+ej. 
+
+const meses =["enero","febrero","marzo","abril"]; //elemento original NO SE MODIFICA.
+const mesesCopia = [...meses]; //copia de meses SI SE PUEDE MODIFICAR.
+
+
+
+<----------------Funciones--------------------->
+
+Funciones:Son una serie de procedimientos o instrucciones que realizan una accion.
+
+existen 3 formas de crear funciones
+
+declaracion: Esta es la forma más básica de declarar una función. 
+Simplemente usas la palabra clave function, seguida por el nombre de la función 
+y los paréntesis (que pueden estar vacíos o contener parámetros), y luego el bloque 
+de código de la función entre llaves.
+
+function funcion(argumentos){
+    console.log('accion de la funcion');
+}
+
+expresion:En este caso, asignamos una función anónima a una variable. 
+Puedes usar la variable para llamar a la función en cualquier momento posterior.
+
+const sumar = function(argumentos){
+    console.log('accion de la funcion');
+}
+
+IIFE:Una función IIFE (Immediately Invoked Function Expression) en JavaScript 
+es una función que se ejecuta inmediatamente después de ser definida. 
+Es una forma de encapsular código y evitar la contaminación del ámbito global.
+(funcion () {
+    console.log('accion de la funcion');
+}());
+
+Diferencia entre declarar una funcion con delcaracion y con expression:
+
+aparte de la diferencia de sintaxis, si mandamos a llamar una funcion antes de definirla,
+con el forma de declaracion no nos marca error pero con la de expression si,
+esto se debe a una caracteristicas de js llamada hoisting.
+
+Hoisting: es el proceso en el que javascript manda primero a crear las 
+funcoines y variables antes de mandarlos a llamar la funcion del codigo, esto solo funciona 
+en declaraciones no en asginaciones.
+
+
+Diferencia entre funcion y metodo.
+
+ambos son bloques de codigo que ejecutan una serie de intrucciones para relaizar una accion,
+la diferencia radica en que una funcion es independiente y un metodo depende de un objecto o clase en particular.
+
+
+en las funciones se le conoce como parametros a las varirables que recibira la funcion para que esta pueda realizar la misma accion con diferentes valores cada vez que sea invocada.}
+mientras que los argumentos son los valores reales que recibira la funcion.
+
+es posible crear funciones donde no se reciban todos los argumetos utilizando parametros por default
+estos paramentros son un valor inicial para la funcion en caso de no recibir paramentros desde donde se manda ejecutar
+
+arrow funcions: es una nueva forma de crear funciones en js
+ ej. const sumar = (n1,n2) => {
+    n1+n2
+}
+
+puntos clave sobre las arrow funciones:
+
+Sintaxis reducida: Las arrow funciones permiten una sintaxis más concisa en comparación con las funciones tradicionales. Eliminan la necesidad de escribir la palabra clave "function", las llaves de apertura y cierre, y la palabra clave "return" en ciertos casos.
+Enlace léxico: El valor de "this" dentro de una arrow función se hereda del contexto en el que se crea la función, en lugar de tener su propio valor vinculado. Esto significa que no hay necesidad de utilizar métodos como "bind", "call" o "apply" para preservar el valor de "this".
+Función anónima: Las arrow funciones son siempre funciones anónimas, lo que significa que no tienen un nombre propio y, por lo tanto, no se pueden utilizar para la recursión o para llamarse a sí mismas.
+Retorno implícito: Si el cuerpo de la arrow función es una expresión única, el valor de esa expresión se devuelve automáticamente sin necesidad de utilizar la palabra clave "return".
+
+<----------------estrucutras de control--------------------->
+
+las estructuras de control son bloques de codigo que dependen de una condicion para ejecutarse
+
+if:es la estrucutra de control mas basica que pregunta por una o mas condiciones
+
+if(valor1 == valor2){
+    //codigo a ejecutar
+}
+
+else: es una estructura de control que ejectura un codigo cuando NO se cumple la condicion de un if
+
+if(valor1 == valor2){
+    //codigo de bloque if
+}else{
+    //codigo de bloque else
+}
+
+else if: es una estructura de control que al momento de no cumplirse un if en lugar de entrar a un else, se vuelve a preguntar por otra condicion.
+
+if(valor1 == valor2){
+    //codigo de bloque if
+}else if(valor1 >= valor2){
+    //codigo de bloque else if
+}
+
+switch: es una estruvutra de control que recibe una variable, dentro contiene otras estrucutra 
+llamadas 'cases' la cual compara el valor recibido en switch por  otro valor y si se cumple la 
+condicion se ejectura el codigo del case que si se cumplio, en caso de que ningun case se cumpla 
+e agrega un bloque de codigo llamado 'default' el cual se ejecutara en caso de no cumplirse ningun case.
+
+la palabra 'break' indica el fin del bloque 'case'
+
+const var = 1;
+
+switch (var){
+    case 0 :
+        //este case no cumple
+        break;
+    case 1 :
+        //este case si cumple
+        break;
+    
+    default:
+        //este case en caso de que ninguno se cumpla
+        break;
+}
+
+iteradores o loops:se refiere a bloques de codigo que no se dejaran de ejecutar mientras se cumpla o no una condicion
+
+for:es un iterador que repetira el codigo segun la condicion que ese le de, consta de una variavble conocida como index, una condicion a cumplir y un incremento para el indice.
+
+for(let index = 0; index < condicion; i + incremento){
+    //codigo a repetir
+}
+
+while: es un interador que se ejecuta mientras una condicion sea verdadera
+
+while(condicion){
+    //codigo a ejecutar
+}
+
+do while: es muy similar el while ambos validan una condicion la diferencia radica en el que el do while el codigo se ejecutara almenos una vez
+
+do{
+    //codigo a ejecutar
+}while(condicion);
+
+metodos de interadores para arreglos
+
+foreach: es un bloque de codigo que se ejecutara una vez por cada elemento del arreglo
+
+arreglo.forEach(() => {
+    //codigo a ejecutar
+})
+
+map: muy similar al foreach con la diferencia de que crea un nuevo arreglo en lugar de iterar sobre el mismo
+
+const nuevoArreglo = arreglo.map(() => {
+    //codigo a ejecutar de ña funcion
+})
+
+foreach esta diseñado para iterar y mostrar los resutados mientras que map regresa un 
+nuevo arreglo segun lo que haga la funcion interna
+
+<----------------palabra reservada this--------------------->
+
+this es una palabra reservada que hace referencia al objeto con una funcion
+sobre el cual se esta mandado a llamar
+
+nota: en las arrow funcion la palabra 'this' hace referencia al objeto ventana 
+y no al que lo esta mandado a llamar
+
+object literals: es un objecto al cual sus propierades de manera manual o hardcodeada.
+
+ej.
+
+const objecto = {
+    propiedad:valor,
+    propuedad2:valor2
+}
+
+object constructor: es una manera mas dinamica de crear objectos, estos se crean muy similar a las funciones
+
+clase:es un contenedor de todos los datos y funciones que van a tener un objecto perteneciente a la clase.
+
+ej.
+
+function Producto(nombre,precio) {
+    this.nombre = nombre,
+    this.precio = precio
+ }
+
+const producto = new Producto('monitor',500);
+
+que son los prototypes?un prototype es una funcion que esta asociada a un tipo de objeto en especifico.
+
+ej.
+
+ Productos.prototype.formatearProducto = function () {
+    return `El producto ${this.nombre} tiene un precion de: ${this.precio}`;
+ }
+
+ console.log(producto3.formatearProducto()); 
+
+ la funcion formatearProducto se crearia como una funcion de cualquier objecto de la clase Productos
+
+
+
+<----------------nueva forma de hacer clases en JS--------------------->
+
+class Producto{
+
+}
+
+const producto = new Producto();
+
+
+<----------------try catch--------------------->
+
+try: es un bloque de codigo que se ejecuta sin condicion,
+ tiene la particularidad de que en caso de que en caso de caer un error 
+ se detiene el flujo del codigo y se salta al bloque catch
+
+catch: es un bloque de codigo que se ejecuta cuando ocurre un error, 
+se encarga de no de tener el sistema y lanza un error.
+
+<----------------promises--------------------->
+
+promise:un promise (o promesa) refleja un valor que prodria estar disponible
+ahora, en un futuro o nunca.
+ej.
+
+const usuarioAutentificacion = new Promise ((resolve,reject) => {
+    const auth = true;
+
+    if(auth){
+        resolve('usuario autenticado'); // el promise se cumple
+    }else{
+        reject('no se autentico'); // no se cumple
+    }
+}); 
+
+
+los promises tienen 3 valores posibles
+
+pending: quiere decir que la promesa esta en espera.
+fullfilled: quiere decir que la promesa ya se cumplio.
+reject: quiere decir que la promesa se ha rechazado.
+
+<----------------Notification api--------------------->
+
+es una api nativa de js que nos permite mandar notificaciones al cliente 
+siempre y cuando este nos de permisos.
+
+como mandar una nitificacion con notificacion api? 
+
+ej.
+ new Notification('Esta es una notificacion',{
+        icon:'img/ccj.png',
+        body:'Codigo con juan los mejores tutoriales'
+    })
+
+<----------------async await--------------------->
+
+Es una sintaxis que se utilzia para trabacar con funciones 
+asyncronas. esas funciones se declaran con la palabra clave 'async'
+lo que permiitra que otras partes del codigo se ejecuten sin esperar a que esa funcion
+termine. por otro lado await es la palabra que se tuliza para decirle a la funciona asyncrona
+para esperar a que una promesa se resuelva antes de continuar la ejecucion de 
+codigo.
+
+setTimeout(funcion(),tiempo): es una funcion que ejecutara otra funcion despues
+de esperar el tiempo asignado en milisegundos.
+
+setInterval(funcion(),tiempo): es una funcion que ejecutara un bloque 
+de codigo cada intervalo de tiempo determinado.
+
+ejemplo
+//funcion con promesa
+function descargarClientes(){
+    return new Promise(resolve => {
+        console.log('Descargando clientes...');
+
+        setTimeout(() => {
+            resolve('los clientes han sido desgargados...')
+        },5000);
+    })
+}
+
+//funcion asyncrona
+async function app(){
+    try{
+        const resultado = await descargarClientes();
+        console.log(resultado);
+    }catch(err){
+        console.log(err);
+    }
+}
+
+app();
+
+console.log('este codigo no se bloquea');
+
+en este ejemplo tenemos una funcion (descargarClientes) que contiene a una promesa
+para llamar a esta funcion de manera asyncrona utilizamos la funcion app() con la palabra clave async
+dentro de esta funcion app(). le declaramos con await la funcion que cuenta con la promesa para que el resto del 
+codigo se ejecute sin esperar la funcion descargarClientes .
+
+Promise.all(arregloPromesas): es una funcion que toma un arreglo de promesas y 
+devuelce un arreglo con los resutlados de las promesas en el mismo orden que se pasaron.
+
+fetchAPI: es una api que nos permite enviar y recibir informacion a un servidor, tambien nos permite actualizar la app 
+sin necesidad de actualizar la pagina.
+
+¿que es JSON? (javascript object notation) es un lenguaje de transporte de datos.

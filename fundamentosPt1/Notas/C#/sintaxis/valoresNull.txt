@@ -1,0 +1,6 @@
+los valores null se declaran agregando ? despues de la declaracion del  tipo de datos
+
+ej
+
+int intNull = null; //error;
+int? intNull = null; //correcto;

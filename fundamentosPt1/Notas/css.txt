@@ -1,0 +1,38 @@
+<--------------------------CHECKLIST CSS------------------------->
+
+Agregar variables necesarias para colores.
+Agregar el hack para rems y box sizing.
+Recuerda utlizar los diferentes estilos de codificacion css segun los necesites (BEM, Modulos y utilidades).
+Agregar media queries para resoluciones para celular (460px), tablet (768px), laptop (1160px) o superiores (1400px).
+Seccionar con comentarios los grupos de clases de css (si son globales o variables o lo que se requiera). 
+display:flex para 
+
+<----------------------DEFINICIONES BEM------------------------>
+Bloques: Contenedores cuya apariencia o comportamiento (CSS) no depende de otros contenedores ej .cliente.
+Elementos: elementos que dependen de un bloque y no por si mismos son significativos se llaman como el bloque y despuesde tienen doble guien bajo ej. cliente__nombre.
+Modificadores: bandera que indica si un bloque o elemento tendra una variante o diseño diferente se llaman como el bloque/elemento pero con doble guion ej. cliente__nombre--ceo.
+
+<----------------RECOMENDACIONES CSS--------------->
+Utilizar constantemente Responsively App para ver las diferentes resoluciones de la app.
+Utilzar pesticide para alinear los elementos.
+En caso de querer utilizar un degradado o sombras apoyarse con la herramienta cssmatic.com
+En caso de querer validar el uso en los navegadores de alguna propiedad CSS ir a caniuse.com 
+Utilizar la propiedad min(x,y) donde x/y son dos unidades de medida donde se utilizara el menor para controlar el tamaño de un elemento
+margin: 0 auto: para centrar horizontal mente elementos que no tengan un elemento padre no sea un display:flex;
+
+<---------RECOMENDACIONES PARA GRID Y FLEX BOX--------->
+
+Utilizar flex-box cuando se requiera manipular la distribucion de los emlementos dentro de los contenedors por ejemplo, una barra de navegacion con un logo.
+Utilizar grid cuando para definir el layout del sitio web. 
+Para abreviar las filas y/o columnas de css grid : grid-template-rows (o -columns): repeat(x, fr); donde x=> las veces que se va a repetir y fr=> son las fracciones de pantalla que va a tomar esa fila o columna
+
+<----------------------CON DISPLAY:FLEX------------------------->
+flex-direction: maneja la orientacion del contenido (rows | columns | row-reverse |column-reverse)
+align-items: define donde se mostraran los elementos dentro del contenedor (flex-start | flex-end | center | baseline | stretch) cuando flex-direction es column o column-reverse sera de arriba hacia abajo y cuando flex-direction es row sera de izquierda a derecha.
+justify-content: define como se distribuira el espacio sobrante del contendor
+
+<----------------------CON DISPLAY:GRID------------------------->
+grid-template-columns: Se utiliza para definir el tamaño de las columnas del grid.
+grid-template-row: Se utliza para definir el tamaño de las filas del grid
+grid: es una mezcla de grid-template-columns y grid-template-row
+column-gap: agrega separacion entre columnas

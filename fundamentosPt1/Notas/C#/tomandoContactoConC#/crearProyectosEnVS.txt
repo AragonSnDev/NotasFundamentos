@@ -1,0 +1,14 @@
+template: son plantillas que representan la estrutura basica del proyecto que se desea crear, esto incluye lor archivos del proyecto y solucion, librerias necesarias y una clase para el proyecto.
+
+un proyecto hecho en C# tiene dos archivos principales.
+
+archivo de proyecto: administra un conjunto de archivos de la aplicacion como clases, modelos, img o cualquier recurso que necesite la aplicacion.
+
+archivo solucion: administra un conjunto de proyectos
+
+analizadores: o analizers se encargan de inspeccionar tu codigo de csharp y tambien de mantener la calidad, diseño y evaluar si existe algun error dentro del codigo.
+
+frameworks: son las librerias que se pueden utilizar para construir la aplicacion, si no se ecneutra alguna libreria que necesitas puedens instalarla con el manejador de paquetes nuget.
+
+program.cs: es un archivo de entrada de la aplicacion, en otras palabras al ejecutar el programa, se ejecutar el codigo fuente que contenga el program.cs
+

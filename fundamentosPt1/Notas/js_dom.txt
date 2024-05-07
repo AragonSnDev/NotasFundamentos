@@ -1,0 +1,121 @@
+seleccionar elementos html en un script de javascript.
+
+huy multiples formas de seleccionar elementos html en un script de javascript las principales son:
+
+1.querySelector:Retorna ningun o hasta un elemento que concuerde con el selector de clase (css) que estas indicando.
+2.querySelectorAll:Retorna ningun o TODOS los elementos que concuerde con el selector de clase (css) que estas indicando
+3.getElementById:Es la antigûa forma seleccionar un elemento en este caso por el selector de id (html) que estas indicando.
+
+los elementos html funcionionan como objectos de js, cuentan con propiedades y valores que podemos modificar con codigo js.
+
+algunas propiedades son:
+
+innerHTML: Esta propiedad te permite acceder y modificar el contenido HTML dentro del elemento, incluyendo texto y otros elementos.
+innerText: Similar a innerHTML, pero solo accede y modifica el texto sin interpretar ningún elemento HTML.
+style: Permite acceder y modificar las propiedades de estilo CSS del elemento, como el color, el tamaño de fuente, el margen, etc.
+classList: Te permite acceder y modificar las clases CSS aplicadas al elemento. Puedes agregar, eliminar o cambiar clases fácilmente.
+src: Esta propiedad se utiliza en elementos como <img> y <script> para especificar la fuente de la imagen o el archivo JavaScript.
+href: Se utiliza en enlaces <a> para especificar la URL de destino.
+value: Esta propiedad se utiliza en elementos de formulario como inputs <input> y textareas <textarea> para acceder o modificar el valor contenido en ellos.
+disabled: Te permite habilitar o deshabilitar un elemento, como un botón o un campo de entrada, estableciendo su valor en true o false.
+checked: Se utiliza en elementos de entrada de tipo checkbox <input type="checkbox"> o radio <input type="radio"> para verificar/activar o desactivar una opción.
+setAttribute: Esta función permite establecer o cambiar cualquier atributo personalizado de un elemento HTML utilizando su nombre y valor.
+
+generar codigo de html con codigo de javascript.
+
+en javascript podemos generar e insertar codigo html con codigo js con la 
+funcion createElement(param) del objecto document donde el param es 
+la etiqueta html en mayuscula y sin <> 
+
+ej.
+document.createElement('A'); genera un enlace
+document.createElement('DIV'); genera un div
+document.createElement('H2'); genera un titulo 2
+
+a estos elementos le podemos agregar o quitar estilos, clases atributos 
+modificando propiedades de sus respectivas etiquetas 
+
+ej.
+const nuevoEnlace = document.createElement('A'); //crea el elemento
+nuevoEnlace.href = 'nuevo-enlace.html'; //modifica el enlace al que dirije
+nuevoEnlace.textContent = 'Un nuevo enlace' //modifica o agrega el texto del enlace
+nuevoEnlace.classList.add('navegacion__enlace') //agrega una clase al elemento
+
+para agregar un elemento html utilizamos la funcion appendChild(param)
+del elemento padre
+
+ej.
+
+const navegacion = document.querySelector('.navegacion'); //elemento padre
+navegacion.appendChild(nuevoEnlace); // se agrega elemento hijo
+
+eventos en javascrip
+
+un evento en js es una accion que ocurre en la pagina web, como hacer clic en 
+un boton, mover el puntero, presionar una tecla, etc.
+
+entre los eventos hay eventos que ocurren por comando del usuario y otros que
+se ejecutan automaticamente.
+
+addEventListener(evento):es una funcion que nos permite ejecutar un codigo una vez
+realizado el evento.
+
+window: es el objeto global que hace referencia a la ventana o pestaña del navegador en
+cuanta con numerosas propiedades y metodos que permiten controlar el comportamiento 
+de la aplicacion.
+
+callback: es una funcion se pasa como argumento a otra funcion.
+
+diferencia entre evento 'load' y 'DOMContentLoaded':
+load espera a que se descargue todo el html,css,js, archivos,etc 
+y el DOMContentLoaded espera a que se descargue solo el html.
+
+es mas comun tener que utilizar el DOMContentLoaded que el load.
+
+
+Reaccionando a eventos
+
+event: es un objeto que contiene toda la informacion relenvante de un evento
+
+preventDefault(): es una funcion que contiene event, evita que el comportamiento 
+por defecto del evento se ejecute
+
+listado de eventos mas utilzados.
+
+onclick: Se desencadena cuando un elemento es clicado por el usuario.
+onload: Se desencadena cuando el navegador ha terminado de cargar la página y todos los elementos en ella, incluyendo imágenes y scripts.
+onmouseover: Se desencadena cuando el cursor del mouse pasa por encima de un elemento.
+onmouseout: Se desencadena cuando el cursor del mouse sale de un elemento previamente destacado.
+onkeydown: Se desencadena cuando una tecla es presionada mientras el elemento tiene el foco.
+onkeyup: Se desencadena cuando una tecla es soltada después de ser presionada mientras el elemento tiene el foco.
+onchange: Se desencadena cuando el valor de un elemento cambia, generalmente en elementos de entrada como campos de texto o selectores.
+onsubmit: Se desencadena cuando el usuario envía un formulario.
+
+onclick vs onsubmit
+la buena practica nos dice que utilizaremos un evento submit cuando mandemos informacion de
+un formulario para todo lo demas utilizaremos un evento click
+
+
+como buena practica el manejo de elementos html y sus eventos mediante codigo js
+se crearan de la siguiente manera
+
+//1. la creacion de los elementos html
+const elem1 = document.createElement('.elem1');
+const elem2 = document.createElement('.elem2');
+
+//2. se crearan los event listener de los elementos html creados
+elem1.addEventListener('click', funcion1);
+elem2.addEventListener('click', funcion2);
+
+//se crearan las funciones que se ejecutaran en los eventos.
+function1(e){
+    //codigo a ejecutar
+}
+
+function2(e){
+    //codigo a ejecutar
+}
+
+
+
+

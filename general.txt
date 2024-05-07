@@ -1,0 +1,49 @@
+estructuras de control: son sentencias que nos permiten crear diferentes flujos de código que se seguirán según si se cumple o no una condición.
+
+if/else: nos permite comparar valores y crear condiciones para realizar diferentes bloques de código si se cumple (if) o no (else) la condición.
+switch: es para probar diferentes resultados de una misma variable
+
+expresión: es un pedazo de código que genera un valor.
+ej.
+    3+4
+    1991
+    true
+    false
+
+sentencia: es una secuencia de acciones que no necesariamente produce un valor.
+
+strict mode:es un mode de javascript que nos obligara a utilizar código seguro y prevenir bugs, se le declara poniendo solo el string 'use-strict';
+
+cambios en strict mode:
+
+¿que tipo de estructura de datos utilizar?
+
+antes de escojer que tipos de estructura de datos utilizar primero debemos ver que tipo de fuente de datos.
+
+1. Codigo fuente (ej. un mensaje de estatus).
+2. UI: un input del usuario o data escrita desde el Dom.
+3. fuentes externas: como una api
+
+antes de escojer una estrucutra de datos preguntate lo siguiente?
+
+¿necesitas solo una lista sensilla de datos? si la respuesta es si entonces utiliza un array o un set, si la respuesta es no ynecesitamos una forma de identificar los valores de la fuente de datos entonces utiliza un objeto o un map.
+
+array vs sets
+
+array para cuando necesitemos que la lista de valores este ordenada, contenga duplicados y necesitemos manipular la data.
+
+sets para cuando necesitemos valores unicos, necesitemos remover duplicados y cuando un rendimiento alto es realmente necesario.
+
+objetos vs maps
+
+objetos es la manera mas tradicional de almacenar data key/value y son mas faciles de escribir o acceder valires con la sintaxis . y []
+
+maps tienen un mejor rendimiento, las llaves pueden ser de caulquier tipo, son faciles de iterals y faciles de computar el tamaño.
+
+en realidad queda a criterio del programador pero puedes tomar en cuenta lo siguiente a la hora de escojer.
+
+objetos cuando necesites incluir funciones y cuando necesites trabajar con JSON.
+
+maps cuando necesitar mappar llaves a valores o necesites llaves que no sean strings.
+
+boxing:en JavaScript, los tipos primitivos (como números, cadenas, booleanos, etc.) se envuelven temporalmente en objetos cuando se realiza una operación que requiere un objeto en lugar de un primitivo

@@ -1,0 +1,168 @@
+operador: son símbolos que nos permiten transformar o combinar multiples valores.
+
+tipos de operadores
+
+matemáticos:
++:suma (también para concatenar strings).
+-:resta.
+/:division.
+*:multiplicación.
+**: potencia.
+
+asignación:
+=: asigna valor.
+=+,=-,=*,=/:realiza la operación matemática al valor x con lo que sea que tenga  a la derecha
+++,--: suma o resta en 1 a la variable.
+
+comparación: 
+>: mayor que.
+<: menor que.
+>=, <=: igual o mayor que e igual o menor que.
+
+precedencia de operadores:javascript tiene un orden que define la prioridad de ejecución o orden de ejecución por el cual se ejecutan los operadores.
+
+esta precedencia es muy similar a la precedencia en matemáticas.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+
+== vs ===
+
+== (loose):compara solo el valor independientemente del tipo (realiza cohesion de tipo).
+=== (strict): compara el valor y el tipo (no realiza cohesion de tipo).
+
+operadores lógicos: son operadores que nos permiten realizar operaciones de true/false.
+
+&&: ambas condiciones tienen que ser igual.
+||: una de las condiciones tiene que cumplirse
+!: niega el valor de la variable (convierte false en true y viceversa).
+
+operador ternario ( ?, : ): es básicamente un if/else de una sola linea.
+ej.
+    const age = 23;
+    age >= 18 ? console.log('Vino') : console.log('Agua').
+
+
+operador spread
+
+es un operador (...) que nos permite agregar multiples valores separados por commas sin tener que escribirlos manualmente.
+
+ej.
+
+const arr = [7,8,9]
+
+y queremos agregar 1,2 al prinicipio
+
+en lugar de hacer
+
+const newArray = [1,2,arr[0],arr[1],arr[2]]
+
+podemos hacer 
+
+const newArray = [1,2,...arr]
+
+o si queremos agregar al final
+
+const newArray = [...arr,9,10]
+
+podemos usar tambien este operador CADA vez que necesitemos los valores individuales de un arreglo.
+
+digamos que queires imprimir todos los valores individualmente
+
+console.log(newArray) //imprime [1,2,7,8,9]
+console.log(...newArray) //imprime 1 2 7 8 9
+
+casos mas comunes para usar spread
+
+1. copiar arreglos
+2. juntar arreglos
+
+Iterables: arrays, strins, maps, sets, pero no objetos
+
+spread on objetos: se puede crear un objeto apartir de otro con el operador spread de la siguiente manera
+
+const newObjSpread = {...objSpread};
+
+esto creara un objeto con la copia a primer nivel (quiere deci que solo copiaria las propiedades cuyo valor no seria un objeto anidado, en caso de contar con un tendira el valor de un objeto vacio) del objeto original.
+
+si se quiere agregar propiedades seria un objeto
+
+const newObjSpread = {propiedad1:'valor 1',...objSpread, propiedad2:'valor 2'};
+
+el patron rest: cuando utilizamos el operador spread al lado izquierdo de la asiganacion, podemos destucturas multiples valores dentro de un sola variable
+
+const [a,b, ...otros] = [1,2,3,4,5,6];
+a = 1,
+b = 2,
+otros = [3,4,5,6];
+
+nota: al momento de usar el patron rest tiene que ir al final de la destrucutracion.
+
+podemos agregaar el patron rest como parametro en una funciones
+
+const add = function (...numeros){
+    
+}
+
+add(1,2,3,4,5,6,7);
+
+en este ejemplo se le estan mandado 7 argumentos a la funcion add pero declaramos la funcion add con el patron rest, el cual comprimira los argumentos en un solo parametro por lo que
+
+numeros = [1,2,3,4,5,6,7]
+
+
+operadores logicos
+
+||: no solo puede regresar valores booleanos como true or false, si no que regresa valores truthy y false oseear
+
+3 || 0: regresaria 3 ya que 3 es truthy.
+'Jonas' || null: 'jonas' es truthy.
+
+short circuit: quiere decir que si uno de los valores que comparamos es verdad el operador logico || nisiqueira compara el segundo valor en caso de ser el operador logico && es al revez si encuentra uno que no cumple en medio de una cadena de && regresa el falsy.
+
+operador  ??: es parecido al tenario solo que pregunta si es indefinido y si lo es le da el valor definido del
+
+ej.
+
+const guestCorrect = restaurant.numGuest ?? 10.
+
+si existe y si tiene un valor truthy la propiedad numGuest, el valor sera el de la propiedad en caso de ser un valor falsy se le asignara 10.
+
+nuevos operadores de asignacion logica.
+
+||=: para asignar un valor que sea truthy si no uno por defecto.
+
+por ejemplo de
+
+const rest = {
+    name: "LaPiazza",
+    owner: "Giobanni Rossi"
+}
+
+rest no tiene la propiedad numGuest, pero si quisieramos asignarlo podriamos hacerlo de la siguiente forma
+
+rest.numGuests = rest.numGuests || 10;
+
+pero con el operador ||= podemos simplificar todavia mas el codigo de la siguiente forma
+
+rest.numGuest ||= 10;
+
+y ahora el objeto rest contara con la propiedad numGuest y esta tendra el valor de 10.
+
+??=: asigna un valor a una variable solo si esa variable es null o undefined.
+
+con el ejemplo aterior
+
+rest.numGuest ??= 10;
+
+en este ejemplo se asigna 10 si numGuest es un valor null o undefined.
+
+&&=: asigna un valor a una variable si esa variable tiene un valor truthy si no se queda con su valor anterior.
+
+con el ejemplo aterior
+
+rest.numGuest &&= 10;
+
+si numGuest existe se le asigna 10.
+
+
+

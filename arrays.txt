@@ -1,0 +1,83 @@
+un arreglo es una estructura de datos que nos permite guardar mas de un valor, estos valores tienen una posición dentro del arreglo de la cual empieza desde la posición 0 hasta la n, la ultima posicion + 1 se le llama la longitud del arreglo
+
+ej, declaración con función Array(): const years = new Array ('1991','1994','2020'); longitud = 3 
+ej. declaración con literal: const friends = ['Michael','Steven','Peter']; longitud = 4;
+
+ej. acede a elementos: friends[0] ;
+
+los elementos de un arreglo son mutables ya que no son un tipo de dato primitivo.
+
+friend[2] = 'Jay';
+
+no podemos reemplazar el array completo si no solo los elementos.
+
+los arrays pueden tener elementos de diferentes tipos
+
+const jonas = [variable, 'string', 10.1, otroArray]
+
+funciones de arrays básicos.
+
+array.push(elemento):añade elemento al array al final del arreglo, regresa la nueva longitud del arreglo
+array.upshift(elemento):añade elemento al array al final del arreglo, regresa la nueva longitud del arreglo
+array.pop():elimina el ultimo elemento del arreglo, regresa el elemento eliminado.
+array.shift():elimina el primer elemento del arreglo, regresa el elemento eliminado.
+array.indexOf(valorElemento): regresa la posición o indice del elemento que contenga el valor que se manda.
+array.includes(valorElemento): regresa true/false si el valor le pertenece a un elemento del arreglo.
+
+¿que es destruturacion de arreglos? una manera de abstraer datos de un arreglo y asignar esos valores en variables.
+
+ej. 
+const arr = [2,3,4],
+const a = arr[0];
+const b = arr[1]; 
+const c = arr[2]; 
+
+destructuracion. 
+
+const [a,b,c] = arr;
+
+al momento de destructurar puedes saltarte elementos de un arreglo de la siguiente forma
+
+ej. 
+const arr = [2,3,4];
+
+destrucutracion saltando el valor 3,
+
+const [a, ,b] = arr
+a sera igual a 2
+b sera igual a 4
+
+el valor 3 es evitado
+
+tambien se puede anidar destrucutarion por ejemplo
+
+const arr = [2,4,[5,6]];
+
+para destrucutar el arreglo anidado y tener sus valores en variables en un solo movimiento
+
+const [a,b,[c,d]] = arr;
+
+los valores de ls variables seran las siguientes.
+a = 2,
+b = 4,
+c = 5,
+d = 6
+
+tambien se le peuden asignar valores por defecto a variables en caso de que un valor del arreglo no exista por tener menos elementos que valores que queremos asignar,
+
+const [p,q,r] = [5,6];
+
+en este caso 
+p=5,
+q=6,
+r=undefined
+
+uso de valores indefinidos
+
+const [p=1,q=1,r=1] = [5,6];
+
+p = 5,
+q = 6,
+r = 1;
+      
+

@@ -1,0 +1,139 @@
+los strings tienen valores de cadena de caracters estos se definen de varias maneras la buena practica es que se definan con comillas simples ('') pero cuando tengamos casos donde se requeira una comilla simple dentro del string podemos utilizas comillas dobles ("")
+
+ej. const cadena = "I'm"; // esto no causa error se
+    const cadena2 = 'I'm'; // esto si.
+
+sin embargo en ecma script 6 se integro una nueva forma de declarar strings mediante template literals (´´) esto permite integrar los caracteres correspondientes dentro de las comillas invertidas ademas de poder concatenar variables con ${} poniendo esto dentro de las commillas invertidas.
+
+ej. const templateLiteral = ´esto es un template literal´;
+ej  const nombre = 'daniel';
+    cosnt templateLiteralNombre = ´mi nombre es ${daniel}´; 
+    console.log(templateLiteralNombre); //mi nombre es daniel
+
+saltos de linea (\n): estos caracteres se les conoce como saltos de linea y nos permite crear strings multilinea.
+
+los strings en realidad son un array de caracteres (char) por lo que tienen las mismas propiedades que uno por ejemplo 
+
+si tenemos un string
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+podemos acceder a cada uno de sus caracteres segun posicion en el string la cual es basicamente su indice en un array tomando en cuenta que la posicion del primer caracter es 0.
+
+console.log(plane[0]); //imprime A
+console.log(plane[1]); //imprime 3
+console.log(plane[2]); //imprime 2
+console.log(plane[3]); //imprime 0
+
+tambien tiene las prpiedades de un array como a cada
+
+console.log(plane.airline); //imprime 16 
+console.log(plane.length); //imprime 4 
+
+
+y tambien tenemos los metodos de un arreglo por ejemplo
+
+console.log(airline.indexOf('r')); //imprime la posicion de la primera 'r' que encuentre osea 76 en este caso
+
+console.log(airline.lastIndexOf('r')); //imprime la posicion de la ultima 'r' que encuentre osea 10 en este caso
+
+console.log(airline.indexOf('Portugal')); //imprime la posicion de la primera 'Portugal' que encuentre osea 8 en este caso
+
+tambien podemos extraer partes de un string con el metodo slice.
+
+console.log(airline.slice(4)); //imprime 'Air Portugal' ya que crea un nuevo string apartir de la posicion 4 del arreglo de caracteres
+
+console.log(airline.slice(4 , 7)); //imprime 'Air' ya que crea un nuevo string con los caracteres que esten entre la posicion 4 y 7 del arreglo de caracteres
+
+incluso podemos  hacer algo como esto
+
+console.log(airline.slice(0 , airline.idexOf(' '))); //imprime 'TAP' creando u string nuevo apartir de la posicion 0 y la primera posicion donde se enccuentre el caracter ' '.
+
+todos y cada uno de los metodos de un string devuelven un string nuevo lo que tambien nos permite realizar chaining de metodos.
+
+por ejemplo 
+
+const email = '   cORReo@Email.com   ';
+
+y queremos tanto poner todo en minusculas y eliminar los espacios lo podriamos en un solo paso de la siguiente manera.
+
+const emailCorrrjido = email.toLowerCase() //devuelve un string con todo en minusculas
+                            .trim();       //elimina los espacios a los lados
+
+
+si quisieras reemplazar una palabra dentro de una cadena de caracteres se hace on el metodo replace
+
+const announcement = 'All passanger come to Boarding door 23, Boarding door 23!';
+
+console.log(announcement.replace('door','gate')); //crea un string sustituyendo la primera instancia de la palabra 'door' por gate 
+
+si quieires remplazar todas las instancias de 'door' se puede hacer de dos maneras
+
+1. con el metodo replaceAll('door', 'gate'); 
+2. con un regex replace(/door/g,'gate')
+
+metodos para buscar caracteres o secuencia de ellos de
+
+const plane = 'A320neo';
+console.log(plane.includes('A320')); //regresa true
+console.log(plane.includes('Boeing')); // regresa false
+
+metodos para ver si empieza o termina con un carater o secuencia de ellos.
+console.log(plane.startsWith('A320')); //regresa true;
+console.log(plane.endsWith('A320')); //regresa false;
+
+si quisieramos dividir un split(delimitador) segun un delimitador lo podemos hacer con el metodo split
+
+console.log('a+very+nice+string).split('+'); //devuelve un array de arrays cada uno con una parte del string ['a','very','nice','string']
+
+y gracias a lo mencionado anteriormente tambien podemos hacer destructurin a un string de la siguiente manera.
+
+const [firstName,lastName] = 'Jonas Schemedtmann'.split(' '); 
+
+firstName tendra el valor de 'Jonas';
+lastName tendra el valor de 'Schemedtmann';
+
+y si quisiermos unir strings lo podriamos hacer con el metodo join(arraystrings)
+
+
+const newName = ['Mr.',firstName,lastName.toUpperCase()].join(' ');
+
+newName = 'Mr. Jonas SCHEMEDTMANN';
+
+al ser arreglos tambien podemos iteral mediante el loop for of con multiples fines como apitalizar una letra de algun nombre.
+
+const capitalizeName = function(name){
+    const names = name.split(' 0);
+    const namesUpper = [];
+
+    for (const n of names){
+        namesUpper.push(n[0].replace(n[0],n[0].toUpperCase()));
+    }
+}
+
+la funcion anterior recibe un string (name) separa los nombres y apellidos mediante el metodo split, y recorre el arreglo de nombres en un for of, dentro del for of, tomamos el primer caracter del nombre y lo pasamos a mayuscula, esto lo agregamos a un arreglo de string mediante el metodo push.
+
+
+en caso de querer agregar un caracter especifico muchas veces podemos utilizar "patStart(numero,char)"
+
+esta funcion concatena al prinicpio del string un "char" un numero de veces definido por "n"
+y tambien tenemos padEnd(numero,char) que hace lo mismo pero al final.
+
+en mascarar strings
+
+si queremos ocultar o enmascarar ciertos caraccteres de un string por ejemplo los digitos de una tarjeta de credito excpeto los ultimos 4 podriamos hacer algo como
+
+const maskCreditCCard = function(number){
+    const str = number+''; //convertir number a string
+    const last = str.slice(-4); //crea un string con los ultimos 4 digitos.
+    return last.padStart(str.length,'*');
+}
+
+si queremos repetir un texto
+
+const message = 'Bad whether... all departures delayed...';
+console.log(message).repeat(5); //repite el string 5 veces.
+
+
+

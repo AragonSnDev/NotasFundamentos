@@ -1,0 +1,5 @@
+Document object model: es la representación estructurada de los documentos html, esta le permite a js acceder a los elementos html y sus estilos y manipularlos.
+
+el dom se representa como árbol genealógico ya que los elementos html son hijos del elemento principal que es el documento html en si, ademas de que cada elemento puede tener mas elementos (hijos) dentro de ellos.
+
+hay que aclarar que los métodos y propiedades que nos permiten modificar el dom no son nativos de JS si no de la api del navegador.
