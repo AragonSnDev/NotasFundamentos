@@ -104,7 +104,7 @@ newName = 'Mr. Jonas SCHEMEDTMANN';
 al ser arreglos tambien podemos iteral mediante el loop for of con multiples fines como apitalizar una letra de algun nombre.
 
 const capitalizeName = function(name){
-    const names = name.split(' 0);
+    const names = name.split(' ');
     const namesUpper = [];
 
     for (const n of names){

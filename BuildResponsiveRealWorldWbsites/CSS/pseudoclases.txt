@@ -1,0 +1,13 @@
+:hover: Se aplica cuando el cursor del mouse se sitúa sobre el elemento.
+:active: Se aplica cuando el elemento está activado, es decir, cuando se hace clic en él.
+:focus: Se aplica cuando el elemento tiene el foco, por ejemplo, cuando se selecciona un campo de entrada de texto.
+:visited: Se aplica a un enlace que ha sido visitado previamente por el usuario.
+:first-child: Se aplica al primer hijo de un elemento padre.
+:last-child: Se aplica al último hijo de un elemento padre.
+:nth-child(n): Se aplica al enésimo hijo de un elemento padre, donde "n" puede ser un número, una fórmula matemática o palabras clave como "even" (pares) o "odd" (impares).
+:nth-of-type(n): Similar a :nth-child(), pero se aplica al enésimo hijo de un tipo específico de elemento.
+:not(selector): Se aplica a elementos que no coinciden con el selector especificado.
+:first-of-type: Se aplica al primer elemento de su tipo dentro de un elemento padre.
+:last-of-type: Se aplica al último elemento de su tipo dentro de un elemento padre.
+:only-child: Se aplica a elementos que son el único hijo de su padre.
+:only-of-type: Se aplica a elementos que son el único de su tipo dentro de un elemento padre.

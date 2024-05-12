@@ -1,0 +1,31 @@
+siempre usar css externo.
+nunca repetir propieadades en diferentes reglas si el valor va aser el mismo de
+ ej.
+
+ h1{
+    font-family: monospace;
+    color: blue;
+ }
+
+ p{
+    font-family: monospace;
+    color: black;
+ }
+
+ mejora junta ese valor en su propia regla
+
+ h1,p{
+    font-family: monospace;
+ }
+
+h1{
+    color: blue;
+ }
+
+ p{
+    color: black;
+ }
+
+ siempre usar clases y no ids.
+
+ siempre usar hexadecimal para colores excepto cuando necesitemos transparecia en ese caso usar rgba.

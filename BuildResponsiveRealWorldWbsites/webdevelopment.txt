@@ -1,0 +1,17 @@
+todos los sitios web estan alojados en un servidor que es cualquier computadora que este conectada a internet y es capaz de recibir peticiones http.
+
+una vez hecha la peticion, el servidor regresa todos los archivos al navegador, estos archivos son html,css y js.
+
+html: es la estructura del contenido la pagina o aplicacion web.
+css: son las reglas que dictan el diseño y presentacion de la pagina web.
+js: es la funcionalidad y comportamiento de la pagina o aplicacion web.
+
+una vez recibidos, el navegador compila estos archivos y renderiza la pagina web, al desarrollo de estos archivos se le conoce como desarrollo de front-end.
+
+algunos sitios web necesitan obtener y procesar informacion antes de mandar los archivos al browser, esto se realiza de lado del servidor, a este proceso se le llama desarrollo de back-end.
+
+hay varios tipos de paginas web
+
+1.sitios estaticos:  es un tipo de sitio web que muestra contenido predefinido y no cambia dinámicamente según la interacción del usuario o la información almacenada en una base de datos. Estos sitios web generalmente están compuestos por archivos HTML, CSS y JavaScript simples que se almacenan en un servidor web y se entregan al navegador del usuario sin procesamiento adicional en el servidor.
+
+2.sitios dinamicos: tipo de sitio web que muestra contenido que puede cambiar en tiempo real o según la interacción del usuario. Estos sitios web suelen utilizar tecnologías del lado del servidor, como bases de datos y lenguajes de programación como PHP, Python o Node.js, para generar contenido personalizado y responder a las solicitudes de los usuarios.

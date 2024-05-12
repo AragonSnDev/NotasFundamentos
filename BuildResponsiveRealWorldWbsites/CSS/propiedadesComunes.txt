@@ -1,0 +1,17 @@
+Propiedades para textos
+
+font-family: Define la fuente del texto.
+font-size: Establece el tamaño de la fuente.
+font-weight: Especifica el grosor de la fuente (por ejemplo, normal, bold).
+font-style: Define el estilo de la fuente (por ejemplo, normal, italic).
+color: Establece el color del texto.
+text-align: Alinea el texto dentro de su contenedor (izquierda, derecha, centro, justificado).
+text-decoration: Agrega decoración al texto (por ejemplo, subrayado, tachado).
+line-height: Define la altura de línea del texto.
+letter-spacing: Ajusta el espaciado entre caracteres.
+word-spacing: Ajusta el espaciado entre palabras.
+text-transform: Transforma el texto (por ejemplo, mayúsculas, minúsculas).
+text-shadow: Agrega sombra al texto.
+white-space: Controla cómo se manejan los espacios en blanco dentro del texto.
+overflow-wrap: Controla el comportamiento del texto cuando se desborda de su contenedor.
+word-break: Controla cómo se rompen las palabras cuando se desbordan de su contenedor.

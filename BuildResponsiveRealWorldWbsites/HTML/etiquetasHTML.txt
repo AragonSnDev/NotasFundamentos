@@ -1,0 +1,45 @@
+Estructura básica de HTML:
+<!DOCTYPE>: Define el tipo de documento y la versión de HTML utilizada.
+<html>: Define el elemento raíz de un documento HTML.
+<head>: Contiene metadatos y enlaces a recursos externos.
+<title>: Define el título de la página que se muestra en la pestaña del navegador.
+<meta>: Proporciona metadatos sobre el documento HTML.
+<body>: Contiene todo el contenido visible de la página.
+
+Estructura de la página:
+<header>: Define el encabezado de la página.
+<nav>: Define la navegación de la página.
+<main>: Define el contenido principal de la página.
+<section>: Define una sección de contenido dentro de un documento.
+<article>: Define un artículo independiente.
+<aside>: Define contenido aparte del contenido principal.
+<footer>: Define el pie de página de la página.
+
+Texto:
+<h1> a <h6>: Define encabezados de diferentes niveles de importancia.
+<p>: Define un párrafo de texto.
+<strong>: Define texto importante, suele mostrarse en negrita por defecto.
+<em>: Define texto enfatizado, suele mostrarse en cursiva por defecto.
+
+Listas:
+<ul>: Define una lista desordenada.
+<ol>: Define una lista ordenada.
+<li>: Define un elemento de lista dentro de ul u ol.
+
+Enlaces:
+<a>: Define un hipervínculo.
+
+Imágenes:
+<img>: Inserta una imagen en la página.
+
+Tablas:
+<table>: Define una tabla.
+<tr>: Define una fila en una tabla.
+<td>: Define una celda de datos en una tabla.
+<th>: Define una celda de encabezado en una tabla.
+
+Formularios:
+<form>: Define un formulario para la entrada de usuario.
+<input>: Define un campo de entrada dentro de un formulario.
+<textarea>: Define un área de texto de múltiples líneas dentro de un formulario.
+<button>: Define un botón clickeable.

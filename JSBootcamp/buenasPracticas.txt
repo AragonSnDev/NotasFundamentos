@@ -1,0 +1,6 @@
+asegurarse de usar "const" cuando una variable no se vaya a modificar en tiempo de ejecución.
+el estándar de strings es utilizar '' en lugar de "".+
+usar lowerCamelCase
+Siempre usar === en lugar de  == en caso de necesitar conversion de tipos hacerla manual.
+usar notación de . cuando se accede a los objectos a menos que se necesite una expression para acceder a una propiedad
+nunca repetir funciones, siempre que se necesite reutilizar logica, crear o extraer esa logica a un nivel al que pueda ser accesido por varios objetos de la clase.

@@ -1,0 +1,34 @@
+es importante utilizar las etiquetas correctas en el lugar correcto, html cuenta con etiquetas de estructuracion para armar nuestra pagina web de manera
+
+<header>:
+Utilízalo para incluir elementos como el logo, el título principal del sitio y la barra de navegación.
+No pongas contenido que no esté directamente relacionado con el encabezado del sitio.
+
+<nav>:
+Úsalo para agrupar enlaces de navegación a otras páginas o secciones del sitio.
+No lo uses para enlaces que no estén relacionados con la navegación principal del sitio.
+
+<main>:
+Utilízalo para envolver el contenido principal de la página, como artículos, secciones o cualquier otra información relevante.
+No lo utilices para contenido repetitivo, como encabezados o barras de navegación.
+
+<section>:
+Empléalo para agrupar contenido temáticamente relacionado dentro de una página.
+No lo uses para envolver todo el contenido de la página; reserva el elemento <main> para ello.
+
+<article>:
+Utilízalo para envolver contenido autónomo e independiente, como publicaciones de blog, artículos de noticias o comentarios.
+No lo uses para contenido que no sea autocontenido, como elementos de navegación.
+
+<aside>:
+Utilízalo para contenido relacionado pero secundario, como barras laterales, anuncios, widgets o contenido relacionado.
+No lo uses para contenido principal que debería estar dentro del flujo principal del contenido.
+
+<footer>:
+Úsalo para incluir información de pie de página, como información de contacto, enlaces útiles, créditos, derechos de autor, etc.
+No pongas contenido que no esté relacionado con el pie de página del sitio.
+
+<div>:
+Se utiliza como un contenedor genérico para agrupar y estructurar contenido sin ningún significado semántico específico.
+Útil para agrupar secciones de contenido relacionadas, aplicar estilos con CSS y dividir la página en secciones lógicas.
+No aporta ningún significado semántico al contenido y se utiliza principalmente con fines de diseño y estructura.

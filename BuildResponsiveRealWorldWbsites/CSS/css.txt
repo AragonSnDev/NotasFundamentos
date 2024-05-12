@@ -1,0 +1,59 @@
+css: hojas de estilos de cascada, es un lenguaje que describe el estilo y presentacion visual del contenido escrito en html, css consiste de incontables propiedades que los desarrolladores usan para darle formato a su contenido
+
+las propiedades pueden ser practicamente cualquier cosa referente a lo visual como la fuente, color del texto, tamaño, espaciado, el acomodo de los componentes, etc.
+
+anatomia del codigo css
+
+h1{ // selector
+    color: blue; // propiedad y valor.
+    text-align: center; // propiedad y valor.
+    font-size; 20px; // propiedad y valor.
+}
+
+selector:es una forma de apuntar a elementos HTML específicos para aplicarles estilos, ya sea por su etiqueta, clase, id o atributo. Esencialmente, son patrones que especifican qué elementos deben ser estilizados dentro de un documento HTML.
+
+hay 3 tipos de selector
+
+de clase css (.nombreClase):Seleccionan elementos que tienen un atributo class específico.
+de id: (#idElmento):Seleccionan un elemento específico por su atributo id
+de element: (elemento):Seleccionan elementos HTML específicos por su nombre de etiqueta. 
+de atributo ([atributo]): Seleccionan elementos que tienen un atributo específico, independientemente de su valor.
+
+propiedad:es un atributo que define cómo se verá o se comportará un elemento HTML seleccionado utilizando un selector. Especifica aspectos como color, tamaño, posición, entre otros, para personalizar la apariencia y el diseño de los elementos en una página web.
+
+podemos juntar selectores para aplicar estilos a diferentes etiquetas con la siguiente sintaxis
+
+ h1, p{
+    font-family: monospace;
+ }
+
+podemos modiicar solo algunas etiquetas que esten dentro de otro elemento html de la siguiente manera.
+
+
+footer p{
+    color:green;
+ }
+
+de esta forma modificamos todos los <p> que esten dentro de un <footer>, cuidado por que si tenemos varios <footer> vamos a modificar todos los p de todos lo footers asi que hay que ser lo mas especifico posible.
+
+pseudoclases:una pseudoclase es una palabra clave que se añade a un selector para especificar un estado especial del elemento seleccionado
+
+muy importate, las pseudoclases son mas escritas a la hora de agrupar selectores, tenemos que ser especificos con el elemento y su posicion en la estructura html.
+
+<div>
+    <h1>titulo</h1>
+    <p> texto</p>
+</div>
+
+si quieramos hacer algo como 
+
+div p:first-child{
+
+}
+
+esto no funcionaria por que <p> no es el primer hijo de <div>
+
+si quisieramos 
+
+
+herencia:

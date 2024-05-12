@@ -1,0 +1,65 @@
+¿que es html? Hypertext markup lenguaje, es una de las tecnologias principales para el desarrollo web.
+
+realmente no es programa de programacion si no uno de maquetado, esto quiere decir que su funcion es estrucutura y describir el contenido de una aplicacion web.
+
+HTML utiliza elementos para desribir diferentes tipos de contenido como paragrafos, enlacez, encabezados, imagenes, videos, etc.
+
+este codigo es renderizado por el navegador web (chrome, firefox, etc) como un sitio web.
+
+ejemplo de un elemento html
+
+<p>HTML is a markup lenguage</p>
+
+un elemento html este compuesto por lo siguiente.
+
+una etiqueta de apertura que marca el tipo de elemento que sera y el comienzo de este elemento, en el caso anterior seria '<p>' 
+
+una etiqueta de cierre que marca el fin del elemento correpondiente en el caso anterior seria '</p>'.
+
+y el contenido del elemento, puede ser cualquier cosa, como un texto o incluso otro elemento html.
+
+hay elementos que no cuentan con contenido por ejemplo '<img>'.
+
+Estructura basica de un documento html.
+
+<!DOCTYPE html> <!-- Declara la versión de HTML que se está utilizando para que el navegador lo entienda-->
+<html lang="es"> <!-- Abre el elemento raíz de un documento HTML y especifica el idioma predeterminado del contenido -->
+
+<head> <!-- Contiene metadatos y enlaces a recursos externos -->
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres del documento -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece la escala de la página para dispositivos móviles -->
+    <title>Título de la página</title> <!-- Define el título de la página que se muestra en la pestaña del navegador -->
+</head>
+
+<body> <!-- Contiene todo el contenido visible de la página -->
+
+</body>
+
+</html>
+
+los elementos suelen tener atributos, que son caracterisitcas que se peuden agregar al elemento para proporcionar informacion adicional del contenido o modificar su comportamiento. estos estan compuestos por su nombre y valor, separados por el signo '=', y se escriben dentro de la etiqueta de inicio del elemento.
+
+ej. <img src='imagen.jpg' alt='' width:"500px" height="500px">
+
+aqui el atributo img, cuenta con un atriburo src, que requiere de la ruta del imagen que mostrara.
+
+el atributo alt, sirve para describir el contenido de la imagen para multiples funciones como usabilidad para gente ciega que utilize screen reader o mostrar el nobre de la imagen en caso de que no se encuentre.
+
+height y width declaran la altura y anchura respretivamente (en pixeles).
+
+etiqueta de enlaze (<a></a>): es una etiqueta que nos permite redirigir al usuario a otra pagina ya sea interna o externa a la aplicacion para eso necesitamos el atributo hfre="enlace".
+
+tambien podemos agregar el atributo target para abrir un enlace nuevo.
+tambien crear un enlace que no apunte a ningun lado de la siguiente mandera.
+
+<a href="#">Nada</a>
+
+este enlaze te lleva al tope de la pagina web.
+
+html "semantico": decimos que html es semantico por algunas de sus etiquetas tienen un significado, al escojer una etiqueta htm no deberiamos pensar en el como se vera en nuestra apicacion si no en el que significa para la aplicacion.
+
+un ejemplo seria la etiqueta bold o <b> la cual realmente no te dice nada sobre el significado de su contenido en la aplicacion, el html semantico para poner algo en negrita seira la etiquet <strong> que indica que es un contenido o texto importante
+
+otro ejemplo tambien podira ser div y nav, por ejemplo div lo utilizamos para encapsular mas contenido y etiquetas, pero es demasiado generico, por lo que en caso de querer encapsular el contenido de la barra de navegacion pordemos utilizar la etiqueta nav la cual india que es la navegacion de la pagina.
+
+es importante utilizar html semantico ya que motores de busqueda como google lo necesitan para entender mejor el contenido de la pagina y tambien sirve para mejorar la accesibildidad para personas que neccesitan screen readers.

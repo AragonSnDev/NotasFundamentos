@@ -1,0 +1,232 @@
+funciones: son los bloques fundamentales del código javascript, son básicamente un bloque de código que se puede reutilizar, estas funciones pueden ser ejecutadas, llamadas o invocadas (es lo mismo).
+
+las funciones pueden recibir (parámetros) y regresar datos.
+
+formas de escribir funciones.
+
+declaración:
+ej.
+    function calcAge1(birthYeah){
+        //código;
+    }
+
+expresión:
+ej.
+    const calcAge2 = function(birthYeah){ //esto es una función expresión ya que genera un valor y este se asigna en calcAge2
+        //código
+    }
+
+diferencias
+una función declarada puede llamarse antes de ser declarada
+calcAge1(1994); //No genera error
+function calcAge1(birthYeah){
+        //código;
+    }
+
+calcAge2(1994); //genera error
+const calcAge2 = function(birthYeah){ 
+        //código
+    }
+
+cuando usar cual? es a criterio del programador pero en algún punto necesitaras alguna de los dos asi que hay que tomarlo encenta.
+
+
+funciones flecha (arrow): es una sintaxis mas fácil para declarar funciones expresión
+ejecución
+
+const calcAge3 = birthYeah => 2037 - birthYeah;
+
+estas se diferencian en que tienen un return implícito cuando esta funcione tiene una sola linea por lo que no es necesario escribir la palabra clave return, ademas en caso de tener una sola linea de código no necesitas escribir las llaves como en el otro tipo de funciones o paréntesis en caso de tier un solo parámetro.
+
+las funciones pueden llamar a otras funciones.
+
+podemos asignar valores por defecto a funciones de la sigueine manera 
+
+function paramsDefault (paramNum = 1, paramString = 'name',paramNull = null){
+
+    const params = {
+        paramNum,
+        paramString,
+        paramNull
+    }
+
+    return params
+}
+
+si queremos utilizar la funcion anterior
+
+console.log(paramsDefault()); // regresa paramNum = 1, paramString = 'name',paramNull = null
+
+console.log(paramsDefault(10)); // regresa paramNum = 10, paramString = 'name',paramNull = null
+
+console.log(paramsDefault(5,'luis')); // regresa paramNum = 1, paramString = 'luis',paramNull = null
+
+console.log(paramsDefault(0,undefined, 5)); // regresa paramNum = 0, paramString = 'name',paramNull = 5
+
+
+los parametros de una funcion apuntan a diferente espacios en memoria cuando son primitivos, pero si son de tipo referenciado y se modifica el parametro dentro de la funcion el valor que se mando tambien se modifica, esto no ocurre con los valores primitivos ya que en ese caso, se crea un nuevo valor y por lo tanto un nuevo espacio en el heap.
+
+esto es importante por que encaso de tener multiples funciones que reciban un valor en comun que sea de tipo referenciado y modificamos ese valor en alguna de ellas podria afectar el resultado de otras funciones.
+
+los argumentos son los valores que se pasan a la funcion al momento de ser invocada.
+
+pasar parametros por valor:
+Se copia el valor real almacenado en la variable original.
+Los cambios en la copia no afectan a la variable original.
+Se aplica a tipos primitivos como números, cadenas, booleanos, etc.
+
+pasar parametros por referencia:
+Se pasa una referencia a la ubicación en memoria donde se encuentra el valor.
+Los cambios en la referencia afectan a la variable original.
+Se aplica a objetos, arreglos, funciones, etc.
+
+funciones de primera clase: javascript trata a sus funciones como "ciudadanos de primera clase", esto quiere decir que las funciones son simplemente valores en otras palabras son otro tipo de "objetos" por lo que podemos almacenarlos en variables y objetos en inclusive pasarlos como argumentos a una funcion y regresarlos de una funcion.
+
+a estas ultimas se les llama funcion de alto orden, que son funciones que reciben o regresan una funcion (o ambas cosas).
+
+las funciones de alto orden nos permiten hacer nuestro codigo mas reutilizable y modulado gracias al nivel de abstracccion que proveen este tipo de funciones.
+
+como se menciono anteriormente una funcion que regresa otra funcion es una funcion de alto orden, la cual nos permite realizar
+
+const greet = function (greetings) { //funcion de alto orden
+    return function (name) { //funcion de primera clase de
+        console.log(`${greetings} ${name}`);
+    }
+}
+
+const greeting = greeting => name => console.log(`${greeting} ${name}`); //misma funcion que la anterior pero con la sintaxis arrow.
+
+const greeterHey = greet('Hey');
+greeterHey('jonas');
+greeterHey('steven');
+
+
+en el ejemplo anterior tenemos un funcion de alto orden 'greet' que recibe un parametro y regresa una funcion que tambien recibe un parame y hace uso de ambos parametros.
+
+esto nos permite asignar esa funcion 'greet' como valor para una constante en este caso greeterHey.
+
+ahora greeterHet tendra el valor de la funcion que regresa 'greet' usando el parametro que se la mando a greet cuando se le asigno greeter hey.
+
+osea que basicamente greeterHey tiene el siguiente valor.
+
+const greeterHey = function (name) {
+        console.log(`Hey ${name}`);
+    }
+
+'Hey' siendo el parametro que se asigno a greet en la siguiente instruccion.
+
+const greeterHey = greet('Hey');
+
+y ahora podemos llamar a la funcion greeterHey(name) para regresar el saludo.
+
+greeterHey('jonas'); //regresa Hey jonas.
+greeterHey('steven'); //regresa Hey steven.
+
+tambien podemos ejecutar ambas funciones de la sigueinte manera.
+
+greet('Hola')('Daniel'); // regresa Hola Daniel
+
+esto es gracias a un concepto llamada closures o cierres de funciones, se vera despues.
+
+metodo call
+
+en caso de querer reutilizar una funcion que es propiedad de un objeto, en otro objeto, tenemos que asignar una variable en el scope que se va utilizar con la propiedad de dicho objeto.
+
+digamos que queremos reutilizar la funcion book de objeto lufthansa en el objeto eurowings.
+
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+    book(flightNum, name) { //funcion que queremos reutilizar
+        console.log(`${name} booked a sea on ${this.airline} flight ${this.iataCode}${flightNum}`);
+        this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+    },
+}
+
+const eurowings = {
+    name: 'Eurowings',
+    iataCode: 'EW',
+    bookings: []
+}
+
+lo que tendriamos que hacer el asignar una variable que contenga la propiedad del lufthansa que contiene la funcion book.
+
+const book = lufthansa.book; //ojo que sin () por que quermos asignar y no ejecutar la funcion.
+
+aun no acabamos, si quieramos ejecutar la funcion book global, nos arrojaria un error de lectura de propiedad indefinida, esto se debe a que book utiliza la variable 'this' para realizar lo que tiene que hacer, y al estar en otro scope que el original, 'this' es undefined.
+
+¿pero como utilizamos book entonces?
+
+utilizamos el metodo call de la funcion book, recuerda que lass funciones son objetos, por lo que tienen propiedades y metodos generadas por js, uno de esos metodos el el metodo call.
+
+el metodo call se utiliza para estableces el valor 'this', asi como pasar argumentos a una funcion
+
+por lo que cuando quisieramos utilizar el metodo 'book' y afectar el objeto 'eurowings', lo hariamos atraves del metodo call para que 'book' tenga un 'this' y se pueda ejecutar correctamente
+
+book.call(eurowings, 23, 'chat');
+
+eurowings->objeto que se quiere afectar.
+los demas parametros son los parametros de la funcion que se estan utlizando.
+
+otra forma de lograr lo mismo es con el metodo apply ya que funcionan pracicamente para lo mismo, su diferencia radica en el como se invoca
+y que apply recibe un arreglo con la data en lugar de los parametros de manera individual.
+
+const flightData = [23, 'chat'];
+book.apply(eurowings, flightData);
+
+aunque este enfoque no es muy recomendado gracias a la intruccion del operador spread, por lo que ahora podemos hacer esto.
+
+book.call(eurowings, ...flightData);
+
+y con esto basicamente creamos una sintaxis mas limpia para nuestro codigo.
+
+metodo bind: al igual que call y apply nos ayuda a utilizar un this en una funcion, pero la diferencia principal radica en que bind no executa ninguna funcion en si, si no que devuelte una funcion con un this.
+
+const bookEw = book.bind(eurowings);
+bookEw(23, 'Steven');;
+
+con el metodo bind podemos mandar ejecutar metodos con parametros predefinidos ya que regresa funciones como en el ejemplo de 'greet' en otras palabras suponiendo que queremos crear una funcion que afecte solamente el vuelo 23 podriamos hacerlo de la siguiente manera.
+
+const bookEw23 = book.bind(eurowings,23);
+bookEw23('Steven');
+bookEw23('Patrick');
+bookEw23('Roger');
+
+cada una de las functions anteriores afecta el objeto eurowings pero siepre tendran el valor 23, esto es un patron de diseño conocido como aplicacion parcial (partial aplicaction).
+
+bindear con evnet listners 
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function (){
+    this.planes++;
+}
+
+document
+    .querySelector('.buy')
+    .addEventListener('click', lufthansa.buyPlane.bind(lufthansa))
+
+podemosn tambien bindear funciones aunque realmente no necesitemos el this, por ejemplo si queremos ejecutar una funcion que recibe varios parametros pero uno de ellos siempre sea el mismo.
+
+const addTax = (rate, value) => value + value * rate;
+
+esta variable nos devuelte un valor segun el impuesto (rate) y el valor (value) pero que tal si necesitamos invocar varias veces ese metodo con un valor de .14 en rate, para esto podriamos bindear con null y de esa forma tendriamos una funcion con un rate fijo y en caso de nesitar un rate en particular podriamos usar la funcion original.
+
+const addISR = addTax.bind(null,0.23);
+addISR(1000); // devuelve 1000*0.23 osea 1230
+const addIVA = addTax.bond(null,0.16);
+addIVA(1000); // devuelve 1000*0.16 osea 1160
+
+entonces esta habilidad de bindear funciones nos permite crear una funcion mas general que de ser necesario podriamos simplemente bindear con parametros predefinidos y hacer nuestro codigo mas limpio
+
+Inmidietly invoked function expression (IIFE): funciones expresion invocadas inmediatamente, son funciones que desaparecen una vez que se terminan de ejecutar.
+
+ej. de una iife:
+
+(function(){
+    console.log('hola mundo');
+})();
+
+las iife no tienen nombre asignado, esto normalmente causa error, pero js nos permite crear funciones sin nombre con la sintaxis anterior.
+
+casos de uso para IIFEs

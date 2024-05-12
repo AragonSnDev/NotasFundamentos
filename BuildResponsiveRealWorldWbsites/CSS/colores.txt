@@ -1,0 +1,23 @@
+Maneras de represnetar color en css
+
+notacion RGB: todos los colores son representados por una combinacion de rojo, verde y azul de la siguiente manera
+
+rgb(rojo,verde,azul)
+
+siendo rojo,verde y azul cualquier valor entre 0 y 255.
+
+tambien existe la notacion rgba que es igual excepto se le agrea un cuarto valor (alpha) que representa la transparencia.
+
+rgb(rojo,verde,azul,alpha)
+
+en este caso alpha toma valores (decimas) de 0 hasta el 1
+
+notacion hexadecimal: los valores toman desde 0 hasta ff (255 en hexadecimal), cada dos digitos representan los colores rojo,verde y azul y se representan de la siguiente forma
+
+#00ffff
+
+tambien pudemos abreviarlos si todos los colores tienen pares indenticos 
+
+#0ff
+
+como nota los grises siempre seran una combinacion de rojo, verde y azul que tengan el mismo valor entre los 3.
