@@ -8,11 +8,23 @@ matemáticos:
 /:division.
 *:multiplicación.
 **: potencia.
+%: regresa el residuo de una division.
 
 asignación:
 =: asigna valor.
 =+,=-,=*,=/:realiza la operación matemática al valor x con lo que sea que tenga  a la derecha
 ++,--: suma o resta en 1 a la variable.
+
+nota importante, cuando usemos un operador que contenga 2 caracteres como ++ o =+, el orden importa, por ejemplo
+
+let a = 10;
+console.lo(a++)//regrega 10 en lugar de 11 ya que primero imprime y despues suma
+console.log(a)// ahora si regresaria 11 ya que ya se ejecuto la instruccion de sumar
+
+para evitar esto podemos hacer lo siguiente (ignorando los console.log anteriores)
+
+let a = 10;
+console.log(++a) //imprime 11 ya que primero suma despues imprime
 
 comparación: 
 >: mayor que.

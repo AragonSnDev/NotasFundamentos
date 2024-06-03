@@ -81,3 +81,16 @@ q = 6,
 r = 1;
       
 
+funciones para tranformar database (map, filter, reduce)
+
+map: es una funcion que regresa un nuevo array conteniendo los resultados de aplicar una operacion en todos los elementos del array original.
+
+filter: regresa un array conteniendo los elementos de un array que pasan una condicion especifica.
+
+reduce: elimina todos los elementos de un arreglo original a un solo valor (como sumar todos los elementos del array).
+
+find: esta funcion toma un callback arreglo y busca un elementos segun una condicion, regresa el primer elemento que cumpla la funcion.
+
+some: esta funcion itera sobre instancias de un array y prueba si al menos un elemento en el arreglo pasa una condicion o prueba implementada por el callback, devuelve un true o false segun el resultado de la prueba
+
+every: similar al some solo que este valida si TODOS los elementos cumplen con esa condicion.

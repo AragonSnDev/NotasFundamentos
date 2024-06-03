@@ -26,6 +26,12 @@ filter(callbackFunction(elemento, indice, array)): Crea un nuevo array con todos
 reduce(callbackFunction(acumulador, elemento, indice, array), valorInicial): Aplica una función a un acumulador y a cada elemento del array (de izquierda a derecha) para reducirlo a un solo valor.
 sort(comparador): Ordena los elementos de un array localmente y devuelve el array ordenado. Por defecto, la ordenación se realiza por orden Unicode de los valores de la cadena convertidos.
 reverse(): Invierte el orden de los elementos en un array.
+some(función): Recorre el array y ejecuta la función proporcionada una vez por cada elemento hasta que encuentre uno que cumpla con la condición especificada en la función. Devuelve true si algún elemento cumple con la condición; de lo contrario, devuelve false.
+every(función): Recorre el array y ejecuta la función proporcionada una vez por cada elemento. Si la función retorna false para algún elemento, el método every retorna false inmediatamente y deja de iterar. Si la función retorna true para todos los elementos, el método retorna true. La función proporcionada recibe tres argumentos: el valor actual del elemento, el índice del elemento y el array sobre el que se está iterando.
+flat(profundidad): Aplana el array hasta la profundidad especificada y devuelve un nuevo array.
+flatMap(función): Aplica una función a cada elemento, aplana el resultado y devuelve un nuevo array.
+fill(valor, inicio, fin): Llena el array con un valor desde el índice inicio hasta el fin (no inclusivo) y devuelve el array modificado.
+
 
 funciones comunes de Sets 
 
@@ -64,3 +70,29 @@ split(separator): Divide una cadena en un array de subcadenas, utilizando el sep
 trim(): Este método elimina los espacios en blanco al principio y al final de una cadena y devuelve la cadena resultante. Los espacios en blanco incluyen espacios, tabulaciones y saltos de línea. Es útil cuando necesitas limpiar una cadena de texto de caracteres no deseados alrededor de su contenido principal.
 replace(oldValue, newValue): Este método busca todas las ocurrencias de un valor específico en una cadena y las reemplaza con un nuevo valor. Devuelve una nueva cadena con las sustituciones realizadas, pero no modifica la cadena original. Es útil para realizar cambios en una cadena sin alterar la original.
 replaceAll(oldValue, newValue): Este método busca todas las ocurrencias de un valor específico en una cadena y las reemplaza con un nuevo valor. A diferencia del método replace(), que solo reemplaza la primera ocurrencia, replaceAll() reemplaza todas las ocurrencias en la cadena. Devuelve una nueva cadena con todas las sustituciones realizadas, pero no modifica la cadena original.
+
+funciones para manipular fechas (date)
+getFullYear(): Devuelve el año de la fecha especificada según la hora local.
+setFullYear(año, [mes], [día]): Establece el año para una fecha según la hora local.
+
+getMonth(): Devuelve el mes de la fecha especificada según la hora local (0-11, donde 0 es enero y 11 es diciembre).
+setMonth(mes, [día]): Establece el mes para una fecha según la hora local.
+
+getDate(): Devuelve el día del mes (1-31) de la fecha especificada según la hora local.
+setDate(día): Establece el día del mes para una fecha según la hora local.
+
+getDay(): Devuelve el día de la semana (0-6) de la fecha especificada según la hora local (0 es domingo, 1 es lunes, etc.).
+
+getHours(): Devuelve la hora (0-23) de la fecha especificada según la hora local.
+setHours(hora, [minuto], [segundo], [milisegundo]): Establece la hora para una fecha según la hora local.
+
+getMinutes(): Devuelve los minutos (0-59) de la fecha especificada según la hora local.
+setMinutes(minutos, [segundo], [milisegundo]): Establece los minutos para una fecha según la hora local.
+
+getSeconds(): Devuelve los segundos (0-59) de la fecha especificada según la hora local.
+setSeconds(segundos, [milisegundo]): Establece los segundos para una fecha según la hora local.
+
+toISOString(): Devuelve una cadena en formato ISO (extendido) de la fecha, siempre en UTC.
+
+getTime(): Devuelve el valor numérico de la fecha especificada en milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.
+setTime(milisegundos): Establece la fecha y hora en función de los milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.

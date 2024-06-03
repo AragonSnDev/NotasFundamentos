@@ -1,0 +1,75 @@
+//Date y Time
+Es un objeto incorporado que permite crear, manipular y formatear fechas y horas
+
+creacion de un tipo de dato date
+
+const now = new Date();
+console.log(now) //Thu May 30 2024 16:55:40 GMT-0700 (GMT-07:00)
+
+const agust2 = new Date('Aug 02 2020 18:05:41')
+console.log(agust2);// Sun Aug 02 2020 18:05:41 GMT-0700 (GMT-07:00)
+
+const chrismasEve15 = new Date('Decenmber 24, 2015');
+console.log(chrismasEve15); //imprime Thu Dec 24 2015 00:00:00 GMT-0700 (GMT-07:00)
+
+const november13year = new Date (2037, 10,19,15,23,5)
+console.log(november13year); // Thu Nov 19 2037 15:23:05 GMT-0700 (GMT-07:00)
+
+
+
+los meses en js empiezan de 0 a 11 
+si mandamos dias de mas como por ejemplo
+
+const december13year = new Date (2037, 10,33,15,23,5)
+console.log(december13year); // Thu Dec 03 2037 15:23:05 GMT-0700 (GMT-07:00)
+
+que mandamos el mes 10 pero dia 33, js realiza la operacion necesaria para que saber que dia del mes que sigue es segun la diferencia entre el numero de dias maximo del mes y los dias proporcionados
+
+convertir de dias a milisegundos con la siguiente formula
+
+const d = 3 //dias a convertir en milisegundos
+const diasMilisegundos = d * 24 * 60 * 60 * 1000;
+console.log(diasMilisegundos); // = 259200000
+
+el tipo de dato Date son objetos por lo que es natural que tengan sus propias funciones para manipular valores de fecha
+
+getFullYear(): Devuelve el año de la fecha especificada según la hora local.
+setFullYear(año, [mes], [día]): Establece el año para una fecha según la hora local.
+
+getMonth(): Devuelve el mes de la fecha especificada según la hora local (0-11, donde 0 es enero y 11 es diciembre).
+setMonth(mes, [día]): Establece el mes para una fecha según la hora local.
+
+getDate(): Devuelve el día del mes (1-31) de la fecha especificada según la hora local.
+setDate(día): Establece el día del mes para una fecha según la hora local.
+
+getDay(): Devuelve el día de la semana (0-6) de la fecha especificada según la hora local (0 es domingo, 1 es lunes, etc.).
+
+getHours(): Devuelve la hora (0-23) de la fecha especificada según la hora local.
+setHours(hora, [minuto], [segundo], [milisegundo]): Establece la hora para una fecha según la hora local.
+
+getMinutes(): Devuelve los minutos (0-59) de la fecha especificada según la hora local.
+setMinutes(minutos, [segundo], [milisegundo]): Establece los minutos para una fecha según la hora local.
+
+getSeconds(): Devuelve los segundos (0-59) de la fecha especificada según la hora local.
+setSeconds(segundos, [milisegundo]): Establece los segundos para una fecha según la hora local.
+
+toISOString(): Devuelve una cadena en formato ISO (extendido) de la fecha, siempre en UTC.
+
+getTime(): Devuelve el valor numérico de la fecha especificada en milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.
+setTime(milisegundos): Establece la fecha y hora en función de los milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.
+
+//calculos con fechas
+en js podemos realizar operaciones de forma tan secilla como decir 
+fecha1 - fecha2, esto nos devuelve la fecha en milisegundos desgraciadamente por ejemplo 
+
+const calcDaysPassed = (date1, date2) => date2 - date1;
+;
+
+const days1 = calcDaysPassed(new Date(2037, 10, 19, 15, 23), new Date(2037, 11, 19, 15, 23))
+
+console.log(days1 ); //2592000000 devuelve la fecha en milisegundos 
+
+si quisieramos sacar una conversion podemos utilizar la siguiete formula
+
+console.log(days1 / (1000 * 60 * 60 * 24)); //devuelce 30 (que son 30 dias de diferencia)
+

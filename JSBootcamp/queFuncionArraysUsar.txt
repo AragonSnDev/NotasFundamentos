@@ -1,0 +1,49 @@
+para escojer una funcion de arrays debemos de preguntarnos que es lo que queremos
+
+queremos...
+
+1.mutar el array original? 
+//añadir un elemento
+push,unshift
+//remover un elemento
+pop,shift,splice
+//otros
+reverse,sort,fill
+
+2.crear un nuevo array?
+//crear apartir del original
+map
+//filtrar usando una condicion
+filter
+//una fraccion del original
+slice
+//agregar al original apartir de otroArray
+concat
+//aplanar el arreglo
+flat, flatMap
+
+3.encontrar un indice del array?
+//encontrar basado en valor
+indexOf
+//encontrar basado en codicion
+findIndex
+
+6.un elemento del array?
+//segun una condicion
+find
+
+5.conocer si un array incluye?
+//segun un valor
+includes
+//segun una condicion
+some,every
+
+6.un nuevo string?
+.join
+
+7.transformar a un valor?
+.reduce //transformar los valores del array en un valor unico
+
+8.loopear el array?
+foreach
+

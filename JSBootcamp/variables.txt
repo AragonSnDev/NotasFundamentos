@@ -21,3 +21,20 @@ var:es la forma antigua de declarar variables en js, funciona muy parecido a let
 
 tambien se puede inicializar una variable sin las palabras let, const o var, pero esto declara la variable dentro del objecto global.
 
+valores bigint
+
+si manejamos numeros mayores a 9007199254740991 js empieza a tener errores de presicion, para solucionar este problema utilizamos el tipo de dato bigint, los bigint se diferencian por que terminan con n al final
+
+9007199254740991n
+20n
+
+
+los valores bigint no son compatibles con las funciones Math como .sqrt().
+
+y al momento de realizar operaciopnes con division, se regresa el big int mas cercano
+
+
+11n/3n // = 3n
+12n/3n // = 12
+
+

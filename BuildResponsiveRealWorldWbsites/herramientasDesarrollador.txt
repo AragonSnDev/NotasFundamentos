@@ -1,0 +1,7 @@
+Las herramientas de desarrolladors de google chrome nos permite explorar las partes mas fundamentals de una pagina web.
+
+las pestañas mas importantes son
+
+elements: esta pestaña contiene la estrutura html y codigo css de una pagina web, aqui podemos modificar el html y css para ver que funciones afectar a que clases o como se representan los elementos html en el browser.
+
+console: nos permite deb

@@ -1,0 +1,85 @@
+ej js los tipos number se utilizan para represntar tanto enteros como decimales por lo que podemos hacer expressiones como 
+
+23 === 23.0 //true
+
+los datos nomber siempre se representan internamente en un formato binario (0,1)
+
+esto causa que js presente ciertos errores matematicos en cuanto a fracciones como 
+
+0.1 + 0.2 === 0.3 //deberia ser true pero es false
+0.1 + 0.2 //deberia devolver 0.3 pero realmente trae 0.30000004.
+
+convertir string a number;
+
+manera tradicional 
+
+Number('23'); //regresa un entero 23
+
+hack 
++'23' //regresa un entero 23 gracias a la cohersion
+
+parseando
+
+Number.parseInt('30px'); //regresa 30
+Number.parseInt('e23'); //regresa NaN (Not a Number)
+
+Number.parseFloat('2.5rem); //regresa 2.5
+Number.parseInt('2.5rem); //regresa 2
+
+al parsear js tratara de identificar el numero correcto en el string, para que esto funcione es necesario que dicho string empieze con el numero
+
+checar si un valor es numerico o no 
+Number.isNaN(20); //devuelve false ya que 20 si es un numero
+Number.isNaN('20'); //devuelve true ya que '20' es un string.
+
+checar si un numero es finito
+Number.isFinite(20); //true
+Number.isFinite('20'); //false
+
+se recomienda utilizar isFinite en lugar de inNaN ya que isFinite devuelve true si es un numero y isNaN devuelve false si es un numero
+
+
+raiz cuadrada
+Math.sqrt(25); // 5
+25**(1/2); // 5
+
+raiz cubica
+8 ** (1/3);// 2
+
+valor maximo entre varios numeros.
+Math.max (5,18,23,11,2) // 23
+Math.max ('5','18','23','11','2') // 23 ya que tambien realiza cohersion de tipos
+
+valor minimo ente valios numeros
+Math.min (5,18,23,11,2) // 2
+
+
+constantes matematicas
+Math.Pi:regresa 3.1416.....
+
+Math.random():regresa numero random entre 0 y 1
+
+
+Math.trunc():elimina la parte decimal
+Math.round():redondea al numero mas cercano
+Math.ceil():redondea al numero mayor
+Math.floor():redondea al numero menos.
+
+trunc vs floor: trunc elimina el numero decimal sin importal simbolo mientras que floor siempre va al mas bajo por ejemplo del
+
+Math.floor(-23.2)//imprime -24
+Math.trunc(-23.2)//imprime -23
+
+redondear decimales
+
+toFixed(digitos):regresa un string de un decimal segun los digitos que se manden, en caso de mandar 0 redondea al mas cercano
+
+separadores numericos
+
+podemos separar numeros grandes en codigo mediante el uso de '_', esto nos permite darle un significado a codigo que veamos que contenga numbers demasiado grandes pero utilizando el valor real del number, esto solo funciona cuando escribimos numero en codigo, no sirve en strings.
+
+const diameter = 287_460_000_000
+console.log(diameter); //imprime 287460000000
+
+const price = 345_99
+console.log(price); //imprime 34599
